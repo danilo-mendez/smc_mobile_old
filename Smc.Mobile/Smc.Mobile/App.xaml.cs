@@ -43,6 +43,7 @@ namespace Smc.Mobile
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();
             containerRegistry.RegisterForNavigation<MainProfilePage, MainProfilePageViewModel>();
             containerRegistry.RegisterForNavigation<DemographicPage, DemographicPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddressPage, AddressPageViewModel>();
         }
     }
 }

@@ -35,29 +35,39 @@
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30*"></ColumnDefinition>
                                     <ColumnDefinition Width="70*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="Étnia: Hispano/Latino" Style="{StaticResource FormLabelStyle}" Grid.Row="1"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="1" ></combobox:SfComboBox>
+                                <Label Text="Étnia: Hispano/Latino" Style="{StaticResource FormLabelStyle}" ></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
 
-                                <Label Text="Blanco" Style="{StaticResource FormLabelStyle}" Grid.Row="2" ></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" ></combobox:SfComboBox>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="2">
+                                        <Label Text="RAZA" Style="{StaticResource SubTitleLabelStyle}"/>
+                                        <BoxView 
+                                                HeightRequest="1" 
+                                                BackgroundColor="#cfd0cb" 
+                                                HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
 
-                                <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}" Grid.Row="3"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" ></combobox:SfComboBox>
+                                <Label Text="Blanco" Style="{StaticResource FormLabelStyle}" Grid.Row="3" ></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" ></combobox:SfComboBox>
 
-                                <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}" Grid.Row="4"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="4" Grid.Column="1" ></combobox:SfComboBox>
+                                <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}" Grid.Row="4"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1" ></combobox:SfComboBox>
 
-                                <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}" Grid.Row="5"></Label>
+                                <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}" Grid.Row="5"></Label>
                                 <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="5" Grid.Column="1" ></combobox:SfComboBox>
 
-                                <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}" Grid.Row="6"></Label>
+                                <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}" Grid.Row="6"></Label>
                                 <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="6" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}" Grid.Row="7"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="7" Grid.Column="1" ></combobox:SfComboBox>
                             </Grid>
                         </StackLayout>
 

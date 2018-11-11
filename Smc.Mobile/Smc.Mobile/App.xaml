@@ -95,11 +95,11 @@
                    TargetType="{x:Type Label}"
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontSize"
-                    Value="{StaticResource LargerSize}" />
+                    Value="{StaticResource MediumSize}" />
                 <Setter Property="Margin"
-                    Value="0, -7, 0,0" />
+                    Value="0, 0, 0, 0" />
                 <Setter Property="TextColor"
-                    Value="DarkGray" />
+                    Value="{StaticResource SteelGray}" />
             </Style>
 
 
