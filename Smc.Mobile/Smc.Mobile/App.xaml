@@ -6,6 +6,125 @@
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="WhiteColor">#ffffff</Color>
+            <Color x:Key="MediumGray">#BABCBF</Color>
+            <Color x:Key="SteelGray">#6D6D70</Color>
+            <Color x:Key="BrandColor">#394A76</Color>
+            <Color x:Key="BrandAccentColor">#87A3BA</Color>
+            <Color x:Key="PrimarBackground">#202e46</Color>
+            <Color x:Key="LightButtonBackgroundColor">#99a0aa</Color>
+            <Color x:Key="LightAccentColor">#EAEAEC</Color>
+            <Color x:Key="LightDefaultColor">#adb3bb</Color>
+            <Color x:Key="LightPlaceholderColor">#EAEAEC</Color>
+
+            <!-- Font Sizes -->
+            <OnPlatform x:Key="MicroSize"
+                        x:TypeArguments="x:Double"
+                        iOS="6"
+                        Android="10"/>
+            <OnPlatform x:Key="LittleSize"
+                        x:TypeArguments="x:Double"
+                        iOS="8"
+                        Android="12"/>
+
+            <OnPlatform x:Key="MidMediumSize"
+                        x:TypeArguments="x:Double"
+                        iOS="10"
+                        Android="14"/>
+
+            <OnPlatform x:Key="MediumSize"
+                        x:TypeArguments="x:Double"
+                        iOS="12"
+                        Android="16"/>
+
+            <OnPlatform x:Key="LargeSize"
+                        x:TypeArguments="x:Double"
+                        iOS="14"
+                        Android="18"/>
+
+            <OnPlatform x:Key="LargerSize"
+                        x:TypeArguments="x:Double"
+                        iOS="16"
+                        Android="20"/>
+
+            <OnPlatform x:Key="BigSize"
+                        x:TypeArguments="x:Double"
+                        iOS="18"
+                        Android="24"/>
+
+            <OnPlatform x:Key="ExtraBigSize"
+                      x:TypeArguments="x:Double"
+                      iOS="24"
+                      Android="32"/>
+
+            <OnPlatform x:Key="HugeSize"
+                        x:TypeArguments="x:Double"
+                        iOS="32"
+                        Android="48"/>
+
+            <!-- Styles -->
+            <Style x:Key="BaseLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="LineBreakMode"
+                        Value="TailTruncation" />
+            </Style>
+
+
+            <Style x:Key="PageTitleLabelStyle" 
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontSize"
+                    Value="{StaticResource ExtraBigSize}" />
+                <Setter Property="Margin"
+                    Value="0, 5, 0,0" />
+            </Style>
+
+            <Style x:Key="FormLabelStyle" 
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontSize"
+                    Value="{StaticResource MidMediumSize}" />
+                <Setter Property="Margin"
+                    Value="10, 2, 0, 0" />
+            </Style>
+
+            <Style x:Key="SubTitleLabelStyle" 
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontSize"
+                    Value="{StaticResource LargerSize}" />
+                <Setter Property="Margin"
+                    Value="0, -7, 0,0" />
+                <Setter Property="TextColor"
+                    Value="DarkGray" />
+            </Style>
+
+
+            <Style x:Key="EntryStyle"
+                   TargetType="{x:Type Entry}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlackColor}" />
+                <Setter Property="PlaceholderColor"
+                        Value="{StaticResource BlackColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargerSize}" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="Opacity"
+                        Value="0.6" />
+                <Setter Property="Margin"
+                    Value="0, -7, 0,0" />
+
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused" 
+                             Value="True">
+                        <Setter Property="Opacity" Value="1" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
 
 	</Application.Resources>
 </prism:PrismApplication>

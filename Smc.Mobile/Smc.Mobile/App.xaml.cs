@@ -1,7 +1,10 @@
 ﻿using Prism;
 using Prism.Ioc;
 using Smc.Mobile.ViewModels;
+using Smc.Mobile.ViewModels.Client;
 using Smc.Mobile.Views;
+using Smc.Mobile.Views.Client;
+using SMC.Mobile.Infrastructure;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,6 +24,9 @@ namespace Smc.Mobile
 
         protected override async void OnInitialized()
         {
+             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTA3MjNAMzEzNjJlMzIyZTMwTXIvTkp0MlB4MjAwWnhrZ0gzTVJ4L1E3TFRrYXlObEZjTm9najMrNzJMbz0=");
+            //  Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDE3NDBAMzEzNjJlMzMyZTMwVlRMZnB4U3lnQWowTWQrR1NTZFlvVW9sTlBwRHFYR3hDaUhzZTIrVXl1OD0=");
+
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
@@ -29,7 +35,12 @@ namespace Smc.Mobile
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<CreateClientNavigationPage>();
+
+            containerRegistry.Register<IBusyService, BusyService>();
+
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();
         }
     }
 }
