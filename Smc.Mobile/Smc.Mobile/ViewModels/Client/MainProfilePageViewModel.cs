@@ -30,5 +30,18 @@ namespace Smc.Mobile.ViewModels.Client
         {
             get; set;
         }
+
+
+        public DelegateCommand SaveAndContinueCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await this.NavigationService.NavigateAsync("DemographicPage", null, false);
+
+                });
+            }
+        }
     }
 }

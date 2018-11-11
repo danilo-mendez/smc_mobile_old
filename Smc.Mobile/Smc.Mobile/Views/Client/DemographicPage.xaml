@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Smc.Mobile.Views.Client.DemographicPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Informacion demografica" Style="{StaticResource PageTitleLabelStyle}"  HorizontalOptions="CenterAndExpand"></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+
+    <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+
+            </StackLayout>
+            <StackLayout Margin="20, 0" VerticalOptions="StartAndExpand">
+                <ScrollView  VerticalOptions="StartAndExpand">
+
+                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+
+                        <StackLayout  VerticalOptions="StartAndExpand">
+
+                            <Grid HorizontalOptions="StartAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Étnia: Hispano/Latino" Style="{StaticResource FormLabelStyle}" Grid.Row="1"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Blanco" Style="{StaticResource FormLabelStyle}" Grid.Row="2" ></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}" Grid.Row="3"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}" Grid.Row="4"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="4" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}" Grid.Row="5"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="5" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}" Grid.Row="6"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="6" Grid.Column="1" ></combobox:SfComboBox>
+                            </Grid>
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+                </ScrollView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button Style="{StaticResource ActionButtonStyle}"
+                        Command="{Binding SaveAndContinueCommand}"                
+                        Text="Continuar" >
+
+                </Button>
+
+
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+
+
+</ContentPage>

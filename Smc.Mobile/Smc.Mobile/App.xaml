@@ -86,9 +86,9 @@
                    TargetType="{x:Type Label}"
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontSize"
-                    Value="{StaticResource LargeSize}" />
+                    Value="{StaticResource MediumSize}" />
                 <Setter Property="Margin"
-                    Value="0, 0, 0, 0" />
+                    Value="0, 10, 0, 0" />
             </Style>
 
             <Style x:Key="SubTitleLabelStyle" 
