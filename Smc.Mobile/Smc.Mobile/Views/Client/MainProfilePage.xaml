@@ -7,12 +7,102 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.MainProfilePage">
     <NavigationPage.TitleView>
-        <Slider HeightRequest="44" WidthRequest="300" />
+        <StackLayout>
+            <Label Text="Mi Perfil" Style="{StaticResource PageTitleLabelStyle}"  HorizontalOptions="CenterAndExpand"></Label>
+        </StackLayout>
     </NavigationPage.TitleView>
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <combobox:SfComboBox HeightRequest="40" x:Name="comboBox"  IsEditableMode="false" DataSource="{Binding GenderList}"></combobox:SfComboBox>
 
-    </StackLayout>
+    <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+
+            </StackLayout>
+            <StackLayout Margin="20, 0" VerticalOptions="StartAndExpand">
+                <ScrollView>
+
+                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+
+                        <StackLayout>
+
+                            <Grid HorizontalOptions="StartAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Primer Nombre" Style="{StaticResource FormLabelStyle}" Grid.Row="1" HorizontalOptions="FillAndExpand" ></Label>
+                                <Entry Style="{StaticResource EntryStyle}" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"  ></Entry>
+
+                                <Label Text="Segundo Nombre" Style="{StaticResource FormLabelStyle}" Grid.Row="2"></Label>
+                                <Entry Style="{StaticResource EntryStyle}"  Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" ></Entry>
+
+
+                                <Label Text="Primer Apellidos" Style="{StaticResource FormLabelStyle}" Grid.Row="3"></Label>
+                                <Entry Style="{StaticResource EntryStyle}"  Grid.Row="3" Grid.Column="1" ></Entry>
+
+                                <Label Text="Segundo Apellido" Style="{StaticResource FormLabelStyle}" Grid.Row="4"></Label>
+                                <Entry Style="{StaticResource EntryStyle}"  Grid.Row="4" Grid.Column="1" ></Entry>
+
+                                <Label Text="Fecha de Nacimiento" Style="{StaticResource FormLabelStyle}" Grid.Row="5" ></Label>
+                                <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2018"  Date="06/21/2018"  HorizontalOptions="FillAndExpand"  Grid.Row="5" Grid.Column="1" />
+
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout>
+
+                            <Grid HorizontalOptions="StartAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Ciudadano Americano o Autorizado a Trabajar" Style="{StaticResource FormLabelStyle}" Grid.Row="1"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Servicio Selectivo" Style="{StaticResource FormLabelStyle}" Grid.Row="2" ></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" ></combobox:SfComboBox>
+
+                                <Label Text="Fecha Verificación Registro Servicio Selectivo" Style="{StaticResource FormLabelStyle}" Grid.Row="3"></Label>
+                                <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2018" Grid.Row="3" Grid.Column="1"  HorizontalOptions="FillAndExpand" />
+                            </Grid>
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+                </ScrollView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button Style="{StaticResource ActionButtonStyle}"
+                        Command="{Binding SaveAndContinueCommand}"                
+                        Text="Continuar" >
+
+                </Button>
+
+
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+
+
+
 
 </ContentPage>

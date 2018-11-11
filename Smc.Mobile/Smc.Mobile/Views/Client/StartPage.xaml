@@ -6,7 +6,9 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.StartPage">
     <NavigationPage.TitleView>
-        <Slider HeightRequest="44" WidthRequest="300" />
+        <StackLayout>
+            <Label Text="SMC Autoregistro" Style="{StaticResource PageTitleLabelStyle}" TextColor="White"  HorizontalOptions="CenterAndExpand"></Label>
+        </StackLayout>
     </NavigationPage.TitleView>
 
 
@@ -23,20 +25,7 @@
                 Text="Continuar" >
 
         </Button>
-
-
-        <!--<local:MaterialButton 
-                        BackgroundColor="{StaticResource BrandAccentColor}" 
-                        TextColor="{StaticResource WhiteColor}" 
-                        FontSize="20"
-                        Text="Continuar" 
-                        Elevation="1" 
-                        VerticalOptions="Center" 
-                        HorizontalOptions="CenterAndExpand"
-                        WidthRequest="200"
-                        BorderRadius="5" 
-                        Command="{Binding SaveAndContinueCommand}"
-                        Margin="0, 30, 0, 10"/>-->
+ 
     </StackLayout>
 
 </ContentPage>

@@ -16,9 +16,17 @@ namespace Smc.Mobile.ViewModels.Client
 
             GenderList = new List<string>();
             GenderList.AddRange(new string[] { "Femenino", "Masculino", "Participante no se identifica" });
+
+            YesNoOptionsList = new List<string>();
+            YesNoOptionsList.AddRange(new string[] { "No", "Si", "Participante no se identifica" });
         }
 
         public List<String> GenderList
+        {
+            get; set;
+        }
+
+        public List<String> YesNoOptionsList
         {
             get; set;
         }
