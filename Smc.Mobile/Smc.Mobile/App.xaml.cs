@@ -41,6 +41,7 @@ namespace Smc.Mobile
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();
+            containerRegistry.RegisterForNavigation<MainProfilePage, MainProfilePageViewModel>();
         }
     }
 }

@@ -65,6 +65,9 @@
     <PackageReference Include="Syncfusion.Licensing">
       <Version>16.2.0.50</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Core">
+      <Version>16.2.0.50</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
       <Version>16.2.0.50</Version>
     </PackageReference>

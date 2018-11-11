@@ -27,7 +27,7 @@ namespace Smc.Mobile.ViewModels
 
                     //Navegacion absolute
                     //Para navegacion no absoluta  NavigationPage/StartPage
-                    await this.NavigationService.NavigateAsync("/NavigationPage/StartPage", null, false);
+                    await this.NavigationService.NavigateAsync("/CreateClientNavigationPage/StartPage", null, false);
 
                 });
                 //return new DelegateCommand(() =>

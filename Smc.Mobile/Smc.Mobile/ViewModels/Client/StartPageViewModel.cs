@@ -13,14 +13,7 @@ namespace Smc.Mobile.ViewModels.Client
        : base(navigationService)
         {
             Title = "Bienvenido";
-
-            GenderList = new List<string>();
-            GenderList.AddRange(new string[] { "Femenino", "Masculino", "Participante no se identifica" });
-        }
-
-        public List<String> GenderList
-        {
-            get; set;
+             
         }
 
         public DelegateCommand SaveAndContinueCommand
@@ -29,7 +22,7 @@ namespace Smc.Mobile.ViewModels.Client
             {
                 return new DelegateCommand(async () =>
                 {
-                    await this.NavigationService.NavigateAsync("/DemographicPage", null, false);
+                    await this.NavigationService.NavigateAsync("MainProfilePage", null, false);
 
                 });
             }

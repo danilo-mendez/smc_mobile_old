@@ -9,9 +9,34 @@
         <Slider HeightRequest="44" WidthRequest="300" />
     </NavigationPage.TitleView>
 
+
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-        <combobox:SfComboBox HeightRequest="40" x:Name="comboBox"  IsEditableMode="false" DataSource="{Binding GenderList}"></combobox:SfComboBox>
+        <Label Text="Ingrese su número telefónico" HorizontalOptions="CenterAndExpand" Style="{StaticResource FormLabelStyle}"  />
+        <StackLayout Margin="10, 10" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Entry Grid.Column="0" WidthRequest="40" Keyboard="Telephone" x:Name="Entry1" MaxLength="3" TextChanged="Entry1_TextChanged"></Entry>
+            <Entry Grid.Column="1" WidthRequest="40" Keyboard="Telephone" x:Name="Entry2" MaxLength="3" TextChanged="Entry2_TextChanged"></Entry>
+            <Entry Grid.Column="2" WidthRequest="60" Keyboard="Telephone" x:Name="Entry3" MaxLength="4"></Entry>
+        </StackLayout>
+
+        <Button Style="{StaticResource ActionButtonStyle}"
+                   Command="{Binding SaveAndContinueCommand}"
+                Text="Continuar" >
+
+        </Button>
+
+
+        <!--<local:MaterialButton 
+                        BackgroundColor="{StaticResource BrandAccentColor}" 
+                        TextColor="{StaticResource WhiteColor}" 
+                        FontSize="20"
+                        Text="Continuar" 
+                        Elevation="1" 
+                        VerticalOptions="Center" 
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="200"
+                        BorderRadius="5" 
+                        Command="{Binding SaveAndContinueCommand}"
+                        Margin="0, 30, 0, 10"/>-->
     </StackLayout>
 
 </ContentPage>
