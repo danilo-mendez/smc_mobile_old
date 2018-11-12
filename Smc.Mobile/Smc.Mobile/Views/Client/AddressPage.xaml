@@ -18,19 +18,32 @@
 
             </StackLayout>
             <StackLayout Margin="20, 0" VerticalOptions="StartAndExpand">
-                <ScrollView  VerticalOptions="StartAndExpand">
-
+                <ScrollView>
                     <StackLayout>
-
                         <StackLayout>
                             <StackLayout>
-                                <Label Text="DIREACCION FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
+                                <Label Text="DIRECCION FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
                                 <BoxView 
                                 HeightRequest="1" 
                                 BackgroundColor="#cfd0cb" 
                                 HorizontalOptions="FillAndExpand" />
                             </StackLayout>
-                            
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                                <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                                <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="StartAndExpand"  ></Entry>
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                            </StackLayout>
+
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>

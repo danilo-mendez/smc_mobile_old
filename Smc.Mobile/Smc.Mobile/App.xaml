@@ -82,13 +82,24 @@
                     Value="0, 5, 0,0" />
             </Style>
 
+            <Style x:Key="BoxViewSubtitleStyle" TargetType="{x:Type BoxView}">
+                <Setter Property="HeightRequest"
+                        Value="1" />
+                <Setter Property="BackgroundColor"
+                        Value="#cfd0cb" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+            </Style>
+
             <Style x:Key="FormLabelStyle" 
                    TargetType="{x:Type Label}"
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontSize"
                     Value="{StaticResource MediumSize}" />
+                <Setter Property="WidthRequest"
+                    Value="200" />
                 <Setter Property="Margin"
-                    Value="0, 10, 0, 0" />
+                    Value="0, 20, 0, 0" />
             </Style>
 
             <Style x:Key="SubTitleLabelStyle" 
@@ -97,7 +108,9 @@
                 <Setter Property="FontSize"
                     Value="{StaticResource MediumSize}" />
                 <Setter Property="Margin"
-                    Value="0, 0, 0, 0" />
+                    Value="10, 30, 0, 0" />
+                <Setter Property="Font"
+                    Value="Bold" />
                 <Setter Property="TextColor"
                     Value="{StaticResource SteelGray}" />
             </Style>
