@@ -10,142 +10,71 @@
             <Label Text="Direcciones" Style="{StaticResource PageTitleLabelStyle}"  HorizontalOptions="CenterAndExpand"></Label>
         </StackLayout>
     </NavigationPage.TitleView>
-    <ContentPage.Content>
 
 
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+    <FlexLayout Direction="Column">
 
-            </StackLayout>
-            <StackLayout Margin="20, 0" VerticalOptions="StartAndExpand">
-                <ScrollView>
+        <!-- Header -->
+        <Label Text="HEADER"
+               FontSize="Large"
+               BackgroundColor="Aqua"
+               HorizontalTextAlignment="Center" />
+
+        <!-- Body -->
+        <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
+
+            <ScrollView FlexLayout.Grow="1">
+
+                <StackLayout>
                     <StackLayout>
-                        <StackLayout>
-                            <StackLayout>
-                                <Label Text="DIRECCION FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
-                                <BoxView 
-                                HeightRequest="1" 
-                                BackgroundColor="#cfd0cb" 
-                                HorizontalOptions="FillAndExpand" />
-                            </StackLayout>
+                        <Label Text="DIRECCION FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
 
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                                <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                            </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
 
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                                <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="StartAndExpand"  ></Entry>
-                            </StackLayout>
-
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
-                            </StackLayout>
-
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width=".3*"></ColumnDefinition>
-                                    <ColumnDefinition Width=".7*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" Grid.Row="1" HorizontalOptions="FillAndExpand" ></Label>
-                                <Entry Style="{StaticResource EntryStyle}" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"  ></Entry>
-
-                                <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" Grid.Row="2"></Label>
-                                <Entry Style="{StaticResource EntryStyle}"  Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" ></Entry>
-
-                                <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
-
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width=".3*"></ColumnDefinition>
-                                            <ColumnDefinition Width=".2*"></ColumnDefinition>
-                                            <ColumnDefinition Width=".3*"></ColumnDefinition>
-                                            <ColumnDefinition Width=".2*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                    </Grid>
-
-                                    <Label Text="Código Postal" Style="{StaticResource FormLabelStyle}" HorizontalOptions="FillAndExpand" ></Label>
-                                    <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Grid.Column="1"  ></Entry>
-
-                                    <Label Text="Extensión" Style="{StaticResource FormLabelStyle}" Grid.Column="2"></Label>
-                                    <Entry Style="{StaticResource EntryStyle}"  Grid.Column="3" HorizontalOptions="FillAndExpand" ></Entry>
-                                </StackLayout>
-
-                            </Grid>
-                        </StackLayout>
-
-                        <StackLayout  Margin="0, 20, 0, 0">
-                            <StackLayout>
-                                <Label Text="DIREACCION POSTAL" Style="{StaticResource SubTitleLabelStyle}"/>
-                                <BoxView 
-                                HeightRequest="1" 
-                                BackgroundColor="#cfd0cb" 
-                                HorizontalOptions="FillAndExpand" />
-                            </StackLayout>
-
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width=".3*"></ColumnDefinition>
-                                    <ColumnDefinition Width=".7*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" Grid.Row="1" HorizontalOptions="FillAndExpand" ></Label>
-                                <Entry Style="{StaticResource EntryStyle}" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"  ></Entry>
-
-                                <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" Grid.Row="2"></Label>
-                                <Entry Style="{StaticResource EntryStyle}"  Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" ></Entry>
-
-                                <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
-
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width=".3*"></ColumnDefinition>
-                                            <ColumnDefinition Width=".2*"></ColumnDefinition>
-                                            <ColumnDefinition Width=".3*"></ColumnDefinition>
-                                            <ColumnDefinition Width=".2*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                    </Grid>
-
-                                    <Label Text="Código Postal" Style="{StaticResource FormLabelStyle}" HorizontalOptions="FillAndExpand" ></Label>
-                                    <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Grid.Column="1"  ></Entry>
-
-                                    <Label Text="Extensión" Style="{StaticResource FormLabelStyle}" Grid.Column="2"></Label>
-                                    <Entry Style="{StaticResource EntryStyle}"  Grid.Column="3" HorizontalOptions="FillAndExpand" ></Entry>
-                                </StackLayout>
-
-                            </Grid>
-                        </StackLayout>
-
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
                     </StackLayout>
 
 
-                </ScrollView>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="End">
-                <Button Style="{StaticResource ActionButtonStyle}"
+                    <StackLayout>
+                        <Label Text="DIRECCION POSTAL" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </FlexLayout>
+
+        <!-- Footer -->
+        <Button Style="{StaticResource ActionButtonStyle}"
                         Command="{Binding SaveAndContinueCommand}"                
                         Text="Continuar" >
 
-                </Button>
-
-
-            </StackLayout>
-        </StackLayout>
-
-    </ContentPage.Content>
+        </Button>
+    </FlexLayout>
+    
 </ContentPage>

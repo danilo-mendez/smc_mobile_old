@@ -13,81 +13,72 @@
     </NavigationPage.TitleView>
 
 
-    <ContentPage.Content>
+    <FlexLayout Direction="Column">
 
+        <!-- Header -->
+        <Label Text="HEADER"
+               FontSize="Large"
+               BackgroundColor="Aqua"
+               HorizontalTextAlignment="Center" />
 
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+        <!-- Body -->
+        <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
 
-            </StackLayout>
-            <StackLayout Margin="20, 0" VerticalOptions="StartAndExpand">
-                <ScrollView  VerticalOptions="StartAndExpand">
+            <ScrollView FlexLayout.Grow="1">
 
-                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <StackLayout>
+                    <StackLayout>
+                        <Label Text="ETNIA" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Hispano o Latino" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
 
-                        <StackLayout  VerticalOptions="StartAndExpand">
+                 
 
-                            <Grid HorizontalOptions="StartAndExpand">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="30*"></ColumnDefinition>
-                                    <ColumnDefinition Width="70*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Text="Étnia: Hispano/Latino" Style="{StaticResource FormLabelStyle}" ></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
-
-                                    <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="2">
-                                        <Label Text="RAZA" Style="{StaticResource SubTitleLabelStyle}"/>
-                                        <BoxView 
-                                                HeightRequest="1" 
-                                                BackgroundColor="#cfd0cb" 
-                                                HorizontalOptions="FillAndExpand" />
-                                    </StackLayout>
-
-                                <Label Text="Blanco" Style="{StaticResource FormLabelStyle}" Grid.Row="3" ></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" ></combobox:SfComboBox>
-
-                                <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}" Grid.Row="4"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1" ></combobox:SfComboBox>
-
-                                <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}" Grid.Row="5"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="5" Grid.Column="1" ></combobox:SfComboBox>
-
-                                <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}" Grid.Row="6"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="6" Grid.Column="1" ></combobox:SfComboBox>
-
-                                <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}" Grid.Row="7"></Label>
-                                <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  Grid.Row="7" Grid.Column="1" ></combobox:SfComboBox>
-                            </Grid>
-                        </StackLayout>
-
+                    <StackLayout>
+                        <Label Text="RAZA" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
 
 
-                </ScrollView>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="End">
-                <Button Style="{StaticResource ActionButtonStyle}"
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Blanco" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </FlexLayout>
+
+        <!-- Footer -->
+        <Button Style="{StaticResource ActionButtonStyle}"
                         Command="{Binding SaveAndContinueCommand}"                
                         Text="Continuar" >
 
-                </Button>
+        </Button>
+    </FlexLayout>
 
-
-            </StackLayout>
-        </StackLayout>
-
-    </ContentPage.Content>
 
 
 </ContentPage>
