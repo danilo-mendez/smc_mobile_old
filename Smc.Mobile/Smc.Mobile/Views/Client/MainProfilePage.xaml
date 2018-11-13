@@ -5,6 +5,8 @@
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+                xmlns:segmentCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.MainProfilePage">
     <NavigationPage.TitleView>
@@ -16,10 +18,28 @@
     <FlexLayout Direction="Column">
 
         <!-- Header -->
-        <Label Text="HEADER"
-               FontSize="Large"
-               BackgroundColor="Aqua"
-               HorizontalTextAlignment="Center" />
+        <buttons:SfSegmentedControl
+            x:Name="wizardNav"
+            SelectionTextColor = "{StaticResource BrandAccentColor}"
+            HeightRequest="80"
+            VisibleSegmentsCount="3"
+            Color="Transparent" 
+            BorderColor="#929292"
+            SelectedIndex="1"
+            FontColor="#929292"
+            HorizontalOptions="StartAndExpand"
+            BackgroundColor="Transparent" >
+            <segmentCollection:List x:TypeArguments="x:String">
+                <x:String>Formals</x:String>
+                <x:String>Casuals</x:String>
+                <x:String>Trendy</x:String>
+            </segmentCollection:List>
+            <buttons:SfSegmentedControl.SelectionIndicatorSettings>
+                <buttons:SelectionIndicatorSettings 
+                    Position="Bottom">
+                </buttons:SelectionIndicatorSettings>
+            </buttons:SfSegmentedControl.SelectionIndicatorSettings>
+        </buttons:SfSegmentedControl>
 
         <!-- Body -->
         <FlexLayout FlexLayout.Grow="1" Margin="40 , 20, 20, 40">

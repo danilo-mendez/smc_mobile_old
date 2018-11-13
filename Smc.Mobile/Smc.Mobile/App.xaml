@@ -7,6 +7,14 @@
 
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
+            <ResourceDictionary>
+                <!--https://github.com/code-mc/material-icon-lib/blob/master/app/src/main/assets/out.txt-->
+                <OnPlatform x:Key="MaterialDesignIcons" x:TypeArguments="x:String" Android="materialdesignicons-webfont.ttf#Material Design Icons" iOS="Material Design Icons"  />
+                <!--usar el mismo codigo generado en metro studio cuando se exporta el font tambien sale en css ejemplo .sf-icon-neutral:before { content: "\e701"; }, usar el codigo &#xe701;-->
+                <!--<OnPlatform x:Key="Emoticons" x:TypeArguments="x:String" Android="emoticons.ttf#emoticons" iOS="emoticons"  />-->
+
+            </ResourceDictionary>
+            
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="WhiteColor">#ffffff</Color>
             <Color x:Key="MediumGray">#BABCBF</Color>

@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:syncmaskededit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
+                xmlns:segmentCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.ContactInfoPage">
 
@@ -16,10 +20,22 @@
     <FlexLayout Direction="Column">
 
         <!-- Header -->
-        <Label Text="HEADER"
-               FontSize="Large"
-               BackgroundColor="Aqua"
-               HorizontalTextAlignment="Center" />
+        <buttons:SfSegmentedControl
+            x:Name="wizardNav"
+            SelectionTextColor = "White"
+            HeightRequest="80"
+            VisibleSegmentsCount="6"
+            Color="Transparent" 
+            BorderColor="#929292"
+            SelectedIndex="1"
+            FontColor="#929292"
+            BackgroundColor="Transparent" >
+            <buttons:SfSegmentedControl.SelectionIndicatorSettings>
+                <buttons:SelectionIndicatorSettings 
+                    Position="Top">
+                </buttons:SelectionIndicatorSettings>
+            </buttons:SfSegmentedControl.SelectionIndicatorSettings>
+        </buttons:SfSegmentedControl>
 
         <!-- Body -->
         <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
@@ -34,24 +50,50 @@
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Forma Preferida Contacto" Style="{StaticResource FormLabelStyle}"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="120"  ></Entry>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <syncfusion:SfRadioGroup Orientation="Horizontal" Margin="0, 20, 0, 0">
+                            <syncfusion:SfRadioButton Text="Llamada"  FontSize="{StaticResource MidMediumSize }"/>
+                            <syncfusion:SfRadioButton Text="Mail"  FontSize="{StaticResource MidMediumSize }"/>
+                            <syncfusion:SfRadioButton Text="Email"  FontSize="{StaticResource MidMediumSize }"/>
+                            <syncfusion:SfRadioButton Text="Texto"  FontSize="{StaticResource MidMediumSize }"/>
+                        </syncfusion:SfRadioGroup>
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">
                         <Label Text="Telefono 1 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="200"  ></Entry>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <StackLayout>
+                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
+                            <syncfusion:SfRadioGroup Orientation="Horizontal">
+                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
+                            </syncfusion:SfRadioGroup>
+                        </StackLayout>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Telefono 2 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="200"  ></Entry>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <StackLayout>
+                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
+                            <syncfusion:SfRadioGroup Orientation="Horizontal">
+                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
+                            </syncfusion:SfRadioGroup>
+                        </StackLayout>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Telefono 3 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="200"  ></Entry>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <StackLayout> 
+
+                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
+                            <syncfusion:SfRadioGroup Orientation="Horizontal">
+                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
+                            </syncfusion:SfRadioGroup>
+                        </StackLayout>
                     </StackLayout>
 
                     <StackLayout>
@@ -67,7 +109,6 @@
                         <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
                     </StackLayout>
 
-                    <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     <StackLayout>
                         <Label Text="INFORMACION DE PERSONA DE CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />

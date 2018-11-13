@@ -13,7 +13,7 @@
 
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Ingrese su Numero de Seguro Social" HorizontalOptions="CenterAndExpand" Style="{StaticResource FormLabelStyle}"  />
+        <Label Text="Ingrese su Numero de Seguro Social" HorizontalOptions="CenterAndExpand" Style="{StaticResource FormLabelStyle}"  WidthRequest="300" />
         <StackLayout Margin="10, 10" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <Entry Grid.Column="0" WidthRequest="40" Keyboard="Telephone" x:Name="Entry1" MaxLength="3" TextChanged="Entry1_TextChanged" IsPassword="True"></Entry>
             <Entry Grid.Column="1" WidthRequest="30" Keyboard="Telephone" x:Name="Entry2" MaxLength="2" TextChanged="Entry2_TextChanged" IsPassword="True"></Entry>
