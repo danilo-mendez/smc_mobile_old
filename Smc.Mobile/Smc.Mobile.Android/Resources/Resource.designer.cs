@@ -63,6 +63,48 @@ namespace Smc.Mobile.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::Smc.Mobile.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::Smc.Mobile.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::Smc.Mobile.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::Smc.Mobile.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::Smc.Mobile.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteBorderColor = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteBorderColor;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteShowBorder = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteShowBorder;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteShowClearButton = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteShowClearButton;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteText = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteText;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteTextColor = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteTextColor;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteTextSize = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteTextSize;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteWatermark = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteWatermark;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteWatermarkColor = global::Smc.Mobile.Droid.Resource.Attribute.autocompleteWatermarkColor;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.layoutManager = global::Smc.Mobile.Droid.Resource.Attribute.layoutManager;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.reverseLayout = global::Smc.Mobile.Droid.Resource.Attribute.reverseLayout;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.spanCount = global::Smc.Mobile.Droid.Resource.Attribute.spanCount;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.stackFromEnd = global::Smc.Mobile.Droid.Resource.Attribute.stackFromEnd;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::Smc.Mobile.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::Smc.Mobile.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::Smc.Mobile.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.sfclosebutton = global::Smc.Mobile.Droid.Resource.Drawable.sfclosebutton;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.styleinfo = global::Smc.Mobile.Droid.Resource.Drawable.styleinfo;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.Itemname = global::Smc.Mobile.Droid.Resource.Id.Itemname;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.icon = global::Smc.Mobile.Droid.Resource.Id.icon;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.item_touch_helper_previous_elevation = global::Smc.Mobile.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.CustomizedView = global::Smc.Mobile.Droid.Resource.Layout.CustomizedView;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.CustomizedView1 = global::Smc.Mobile.Droid.Resource.Layout.CustomizedView1;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.sfautocomplete_layout = global::Smc.Mobile.Droid.Resource.Layout.sfautocomplete_layout;
+			global::Com.Syncfusion.Autocomplete.Resource.String.library_name = global::Smc.Mobile.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView = global::Smc.Mobile.Droid.Resource.Styleable.RecyclerView;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_android_descendantFocusability = global::Smc.Mobile.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_android_orientation = global::Smc.Mobile.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_layoutManager = global::Smc.Mobile.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_reverseLayout = global::Smc.Mobile.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_spanCount = global::Smc.Mobile.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_stackFromEnd = global::Smc.Mobile.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteBorderColor = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteBorderColor;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteShowBorder = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteShowBorder;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteShowClearButton = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteShowClearButton;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteText = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteText;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteTextColor = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteTextColor;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteTextSize = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteTextSize;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteWatermark = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteWatermark;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteWatermarkColor = global::Smc.Mobile.Droid.Resource.Styleable.SfAutoComplete_autocompleteWatermarkColor;
 			global::Syncfusion.XForms.Android.ComboBox.Resource.Attribute.layoutManager = global::Smc.Mobile.Droid.Resource.Attribute.layoutManager;
 			global::Syncfusion.XForms.Android.ComboBox.Resource.Attribute.reverseLayout = global::Smc.Mobile.Droid.Resource.Attribute.reverseLayout;
 			global::Syncfusion.XForms.Android.ComboBox.Resource.Attribute.spanCount = global::Smc.Mobile.Droid.Resource.Attribute.spanCount;
@@ -270,41 +312,41 @@ namespace Smc.Mobile.Droid
 			// aapt resource value: 0x7f01008e
 			public const int activityChooserViewStyle = 2130772110;
 			
-			// aapt resource value: 0x7f010176
-			public const int ahBarColor = 2130772342;
-			
 			// aapt resource value: 0x7f01017e
-			public const int ahBarLength = 2130772350;
+			public const int ahBarColor = 2130772350;
 			
-			// aapt resource value: 0x7f01017d
-			public const int ahBarWidth = 2130772349;
+			// aapt resource value: 0x7f010186
+			public const int ahBarLength = 2130772358;
+			
+			// aapt resource value: 0x7f010185
+			public const int ahBarWidth = 2130772357;
+			
+			// aapt resource value: 0x7f010183
+			public const int ahCircleColor = 2130772355;
+			
+			// aapt resource value: 0x7f010182
+			public const int ahDelayMillis = 2130772354;
+			
+			// aapt resource value: 0x7f010184
+			public const int ahRadius = 2130772356;
+			
+			// aapt resource value: 0x7f01017f
+			public const int ahRimColor = 2130772351;
+			
+			// aapt resource value: 0x7f010180
+			public const int ahRimWidth = 2130772352;
+			
+			// aapt resource value: 0x7f010181
+			public const int ahSpinSpeed = 2130772353;
 			
 			// aapt resource value: 0x7f01017b
-			public const int ahCircleColor = 2130772347;
-			
-			// aapt resource value: 0x7f01017a
-			public const int ahDelayMillis = 2130772346;
+			public const int ahText = 2130772347;
 			
 			// aapt resource value: 0x7f01017c
-			public const int ahRadius = 2130772348;
+			public const int ahTextColor = 2130772348;
 			
-			// aapt resource value: 0x7f010177
-			public const int ahRimColor = 2130772343;
-			
-			// aapt resource value: 0x7f010178
-			public const int ahRimWidth = 2130772344;
-			
-			// aapt resource value: 0x7f010179
-			public const int ahSpinSpeed = 2130772345;
-			
-			// aapt resource value: 0x7f010173
-			public const int ahText = 2130772339;
-			
-			// aapt resource value: 0x7f010174
-			public const int ahTextColor = 2130772340;
-			
-			// aapt resource value: 0x7f010175
-			public const int ahTextSize = 2130772341;
+			// aapt resource value: 0x7f01017d
+			public const int ahTextSize = 2130772349;
 			
 			// aapt resource value: 0x7f0100b3
 			public const int alertDialogButtonGroupStyle = 2130772147;
@@ -350,6 +392,30 @@ namespace Smc.Mobile.Droid
 			
 			// aapt resource value: 0x7f010050
 			public const int autoSizeTextType = 2130772048;
+			
+			// aapt resource value: 0x7f010177
+			public const int autocompleteBorderColor = 2130772343;
+			
+			// aapt resource value: 0x7f010173
+			public const int autocompleteShowBorder = 2130772339;
+			
+			// aapt resource value: 0x7f010174
+			public const int autocompleteShowClearButton = 2130772340;
+			
+			// aapt resource value: 0x7f010179
+			public const int autocompleteText = 2130772345;
+			
+			// aapt resource value: 0x7f010176
+			public const int autocompleteTextColor = 2130772342;
+			
+			// aapt resource value: 0x7f01017a
+			public const int autocompleteTextSize = 2130772346;
+			
+			// aapt resource value: 0x7f010178
+			public const int autocompleteWatermark = 2130772344;
+			
+			// aapt resource value: 0x7f010175
+			public const int autocompleteWatermarkColor = 2130772341;
 			
 			// aapt resource value: 0x7f01002e
 			public const int background = 2130772014;
@@ -2425,26 +2491,26 @@ namespace Smc.Mobile.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020135
-			public const int avd_hide_password_1 = 2130837813;
+			// aapt resource value: 0x7f020139
+			public const int avd_hide_password_1 = 2130837817;
 			
-			// aapt resource value: 0x7f020136
-			public const int avd_hide_password_2 = 2130837814;
+			// aapt resource value: 0x7f02013a
+			public const int avd_hide_password_2 = 2130837818;
 			
-			// aapt resource value: 0x7f020137
-			public const int avd_hide_password_3 = 2130837815;
+			// aapt resource value: 0x7f02013b
+			public const int avd_hide_password_3 = 2130837819;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020138
-			public const int avd_show_password_1 = 2130837816;
+			// aapt resource value: 0x7f02013c
+			public const int avd_show_password_1 = 2130837820;
 			
-			// aapt resource value: 0x7f020139
-			public const int avd_show_password_2 = 2130837817;
+			// aapt resource value: 0x7f02013d
+			public const int avd_show_password_2 = 2130837821;
 			
-			// aapt resource value: 0x7f02013a
-			public const int avd_show_password_3 = 2130837818;
+			// aapt resource value: 0x7f02013e
+			public const int avd_show_password_3 = 2130837822;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -3008,115 +3074,127 @@ namespace Smc.Mobile.Droid
 			public const int Icon = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int mr_button_connected_dark = 2130837776;
+			public const int inputlayout_togglecollapseicon = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int mr_button_connected_light = 2130837777;
+			public const int inputlayout_togglevisibleicon = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int mr_button_connecting_dark = 2130837778;
+			public const int mr_button_connected_dark = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int mr_button_connecting_light = 2130837779;
+			public const int mr_button_connected_light = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int mr_button_dark = 2130837780;
+			public const int mr_button_connecting_dark = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int mr_button_light = 2130837781;
+			public const int mr_button_connecting_light = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int mr_dialog_close_dark = 2130837782;
+			public const int mr_button_dark = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int mr_dialog_close_light = 2130837783;
+			public const int mr_button_light = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int mr_dialog_material_background_dark = 2130837784;
+			public const int mr_dialog_close_dark = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int mr_dialog_material_background_light = 2130837785;
+			public const int mr_dialog_close_light = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int mr_group_collapse = 2130837786;
+			public const int mr_dialog_material_background_dark = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int mr_group_expand = 2130837787;
+			public const int mr_dialog_material_background_light = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int mr_media_pause_dark = 2130837788;
+			public const int mr_group_collapse = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int mr_media_pause_light = 2130837789;
+			public const int mr_group_expand = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int mr_media_play_dark = 2130837790;
+			public const int mr_media_pause_dark = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int mr_media_play_light = 2130837791;
+			public const int mr_media_pause_light = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int mr_media_stop_dark = 2130837792;
+			public const int mr_media_play_dark = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int mr_media_stop_light = 2130837793;
+			public const int mr_media_play_light = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int mr_vol_type_audiotrack_dark = 2130837794;
+			public const int mr_media_stop_dark = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int mr_vol_type_audiotrack_light = 2130837795;
+			public const int mr_media_stop_light = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int navigation_empty_icon = 2130837796;
+			public const int mr_vol_type_audiotrack_dark = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int notification_action_background = 2130837797;
+			public const int mr_vol_type_audiotrack_light = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int notification_bg = 2130837798;
+			public const int navigation_empty_icon = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int notification_bg_low = 2130837799;
+			public const int notification_action_background = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int notification_bg_low_normal = 2130837800;
+			public const int notification_bg = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int notification_bg_low_pressed = 2130837801;
+			public const int notification_bg_low = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int notification_bg_normal = 2130837802;
+			public const int notification_bg_low_normal = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int notification_bg_normal_pressed = 2130837803;
+			public const int notification_bg_low_pressed = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int notification_icon_background = 2130837804;
-			
-			// aapt resource value: 0x7f020133
-			public const int notification_template_icon_bg = 2130837811;
-			
-			// aapt resource value: 0x7f020134
-			public const int notification_template_icon_low_bg = 2130837812;
+			public const int notification_bg_normal = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int notification_tile_bg = 2130837805;
+			public const int notification_bg_normal_pressed = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int notify_panel_notification_icon_bg = 2130837806;
+			public const int notification_icon_background = 2130837806;
+			
+			// aapt resource value: 0x7f020137
+			public const int notification_template_icon_bg = 2130837815;
+			
+			// aapt resource value: 0x7f020138
+			public const int notification_template_icon_low_bg = 2130837816;
 			
 			// aapt resource value: 0x7f02012f
-			public const int roundedbg = 2130837807;
+			public const int notification_tile_bg = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int roundedbgdark = 2130837808;
+			public const int notify_panel_notification_icon_bg = 2130837808;
 			
 			// aapt resource value: 0x7f020131
-			public const int tooltip_frame_dark = 2130837809;
+			public const int roundedbg = 2130837809;
 			
 			// aapt resource value: 0x7f020132
-			public const int tooltip_frame_light = 2130837810;
+			public const int roundedbgdark = 2130837810;
+			
+			// aapt resource value: 0x7f020133
+			public const int sfclosebutton = 2130837811;
+			
+			// aapt resource value: 0x7f020134
+			public const int styleinfo = 2130837812;
+			
+			// aapt resource value: 0x7f020135
+			public const int tooltip_frame_dark = 2130837813;
+			
+			// aapt resource value: 0x7f020136
+			public const int tooltip_frame_light = 2130837814;
 			
 			static Drawable()
 			{
@@ -3924,142 +4002,148 @@ namespace Smc.Mobile.Droid
 			public const int CustomizedView = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int design_bottom_navigation_item = 2130968604;
+			public const int CustomizedView1 = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int design_bottom_sheet_dialog = 2130968605;
+			public const int design_bottom_navigation_item = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int design_layout_snackbar = 2130968606;
+			public const int design_bottom_sheet_dialog = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int design_layout_snackbar_include = 2130968607;
+			public const int design_layout_snackbar = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int design_layout_tab_icon = 2130968608;
+			public const int design_layout_snackbar_include = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int design_layout_tab_text = 2130968609;
+			public const int design_layout_tab_icon = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int design_menu_item_action_area = 2130968610;
+			public const int design_layout_tab_text = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int design_navigation_item = 2130968611;
+			public const int design_menu_item_action_area = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int design_navigation_item_header = 2130968612;
+			public const int design_navigation_item = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int design_navigation_item_separator = 2130968613;
+			public const int design_navigation_item_header = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int design_navigation_item_subheader = 2130968614;
+			public const int design_navigation_item_separator = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int design_navigation_menu = 2130968615;
+			public const int design_navigation_item_subheader = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int design_navigation_menu_item = 2130968616;
+			public const int design_navigation_menu = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int design_text_input_password_icon = 2130968617;
+			public const int design_navigation_menu_item = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int loading = 2130968618;
+			public const int design_text_input_password_icon = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int loadingimage = 2130968619;
+			public const int loading = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int loadingprogress = 2130968620;
+			public const int loadingimage = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int mr_chooser_dialog = 2130968621;
+			public const int loadingprogress = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int mr_chooser_list_item = 2130968622;
+			public const int mr_chooser_dialog = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int mr_controller_material_dialog_b = 2130968623;
+			public const int mr_chooser_list_item = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int mr_controller_volume_item = 2130968624;
+			public const int mr_controller_material_dialog_b = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int mr_playback_control = 2130968625;
+			public const int mr_controller_volume_item = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int mr_volume_control = 2130968626;
+			public const int mr_playback_control = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_action = 2130968627;
+			public const int mr_volume_control = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_action_tombstone = 2130968628;
+			public const int notification_action = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_media_action = 2130968629;
+			public const int notification_action_tombstone = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_media_cancel_action = 2130968630;
+			public const int notification_media_action = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_big_media = 2130968631;
+			public const int notification_media_cancel_action = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int notification_template_big_media_custom = 2130968632;
+			public const int notification_template_big_media = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int notification_template_big_media_narrow = 2130968633;
+			public const int notification_template_big_media_custom = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int notification_template_big_media_narrow_custom = 2130968634;
+			public const int notification_template_big_media_narrow = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int notification_template_custom_big = 2130968635;
+			public const int notification_template_big_media_narrow_custom = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int notification_template_icon_group = 2130968636;
+			public const int notification_template_custom_big = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int notification_template_lines_media = 2130968637;
+			public const int notification_template_icon_group = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int notification_template_media = 2130968638;
+			public const int notification_template_lines_media = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int notification_template_media_custom = 2130968639;
+			public const int notification_template_media = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int notification_template_part_chronometer = 2130968640;
+			public const int notification_template_media_custom = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int notification_template_part_time = 2130968641;
+			public const int notification_template_part_chronometer = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int select_dialog_item_material = 2130968642;
+			public const int notification_template_part_time = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int select_dialog_multichoice_material = 2130968643;
+			public const int select_dialog_item_material = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int select_dialog_singlechoice_material = 2130968644;
+			public const int select_dialog_multichoice_material = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int sfcomboBox_layout = 2130968645;
+			public const int select_dialog_singlechoice_material = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int support_simple_spinner_dropdown_item = 2130968646;
+			public const int sfautocomplete_layout = 2130968646;
 			
 			// aapt resource value: 0x7f040047
-			public const int Tabbar = 2130968647;
+			public const int sfcomboBox_layout = 2130968647;
 			
 			// aapt resource value: 0x7f040048
-			public const int Toolbar = 2130968648;
+			public const int support_simple_spinner_dropdown_item = 2130968648;
 			
 			// aapt resource value: 0x7f040049
-			public const int tooltip = 2130968649;
+			public const int Tabbar = 2130968649;
+			
+			// aapt resource value: 0x7f04004a
+			public const int Toolbar = 2130968650;
+			
+			// aapt resource value: 0x7f04004b
+			public const int tooltip = 2130968651;
 			
 			static Layout()
 			{
@@ -7022,18 +7106,18 @@ namespace Smc.Mobile.Droid
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
 			
 			public static int[] ProgressWheel = new int[] {
-					2130772339,
-					2130772340,
-					2130772341,
-					2130772342,
-					2130772343,
-					2130772344,
-					2130772345,
-					2130772346,
 					2130772347,
 					2130772348,
 					2130772349,
-					2130772350};
+					2130772350,
+					2130772351,
+					2130772352,
+					2130772353,
+					2130772354,
+					2130772355,
+					2130772356,
+					2130772357,
+					2130772358};
 			
 			// aapt resource value: 3
 			public const int ProgressWheel_ahBarColor = 3;
@@ -7208,6 +7292,40 @@ namespace Smc.Mobile.Droid
 			
 			// aapt resource value: 12
 			public const int SearchView_voiceIcon = 12;
+			
+			public static int[] SfAutoComplete = new int[] {
+					2130772339,
+					2130772340,
+					2130772341,
+					2130772342,
+					2130772343,
+					2130772344,
+					2130772345,
+					2130772346};
+			
+			// aapt resource value: 4
+			public const int SfAutoComplete_autocompleteBorderColor = 4;
+			
+			// aapt resource value: 0
+			public const int SfAutoComplete_autocompleteShowBorder = 0;
+			
+			// aapt resource value: 1
+			public const int SfAutoComplete_autocompleteShowClearButton = 1;
+			
+			// aapt resource value: 6
+			public const int SfAutoComplete_autocompleteText = 6;
+			
+			// aapt resource value: 3
+			public const int SfAutoComplete_autocompleteTextColor = 3;
+			
+			// aapt resource value: 7
+			public const int SfAutoComplete_autocompleteTextSize = 7;
+			
+			// aapt resource value: 5
+			public const int SfAutoComplete_autocompleteWatermark = 5;
+			
+			// aapt resource value: 2
+			public const int SfAutoComplete_autocompleteWatermarkColor = 2;
 			
 			public static int[] SnackbarLayout = new int[] {
 					16843039,

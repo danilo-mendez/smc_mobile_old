@@ -15,5 +15,16 @@ namespace Smc.Mobile.ViewModels.Client
             Title = "Bienvenido";
         }
 
-	}
+        public DelegateCommand SaveAndContinueCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await this.NavigationService.NavigateAsync("ContactInfoPage", null, false);
+
+                });
+            }
+        }
+    }
 }

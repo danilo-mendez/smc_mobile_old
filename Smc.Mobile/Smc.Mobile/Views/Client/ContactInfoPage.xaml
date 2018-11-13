@@ -2,7 +2,116 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.ContactInfoPage">
-  
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Informacion de Contacto" Style="{StaticResource PageTitleLabelStyle}"  HorizontalOptions="CenterAndExpand"></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+
+    <FlexLayout Direction="Column">
+
+        <!-- Header -->
+        <Label Text="HEADER"
+               FontSize="Large"
+               BackgroundColor="Aqua"
+               HorizontalTextAlignment="Center" />
+
+        <!-- Body -->
+        <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
+
+            <ScrollView FlexLayout.Grow="1">
+
+                <StackLayout>
+                    <StackLayout>
+                        <Label Text="TELEFONOS DE CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Forma Preferida Contacto" Style="{StaticResource FormLabelStyle}"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="120"  ></Entry>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Telefono 1 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="200"  ></Entry>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Telefono 2 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="200"  ></Entry>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Telefono 3 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="Start" WidthRequest="200"  ></Entry>
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding PhoneTypeList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="EMAIL DE CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Correo Electrónico" Style="{StaticResource FormLabelStyle}"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Correo Electrónico 2" Style="{StaticResource FormLabelStyle}"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+
+                    <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    <StackLayout>
+                        <Label Text="INFORMACION DE PERSONA DE CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+
+                    <!--<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+
+
+                    <StackLayout>
+                        <Label Text="DIRECCION POSTAL" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    </StackLayout>-->
+
+                </StackLayout>
+            </ScrollView>
+        </FlexLayout>
+
+        <!-- Footer -->
+        <Button Style="{StaticResource ActionButtonStyle}"
+                        Command="{Binding SaveAndContinueCommand}"                
+                        Text="Continuar" >
+
+        </Button>
+    </FlexLayout>
+
 </ContentPage>

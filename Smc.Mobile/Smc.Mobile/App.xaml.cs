@@ -24,8 +24,10 @@ namespace Smc.Mobile
 
         protected override async void OnInitialized()
         {
-             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTA3MjNAMzEzNjJlMzIyZTMwTXIvTkp0MlB4MjAwWnhrZ0gzTVJ4L1E3TFRrYXlObEZjTm9najMrNzJMbz0=");
-            //  Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDE3NDBAMzEzNjJlMzMyZTMwVlRMZnB4U3lnQWowTWQrR1NTZFlvVW9sTlBwRHFYR3hDaUhzZTIrVXl1OD0=");
+
+            //https://www.syncfusion.com/account/downloads
+            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTA3MjNAMzEzNjJlMzIyZTMwTXIvTkp0MlB4MjAwWnhrZ0gzTVJ4L1E3TFRrYXlObEZjTm9najMrNzJMbz0=");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDI1MThAMzEzNjJlMzMyZTMwUDEyZ1Q5WTdmT3ZldFM4NlArS1RQRW9PUWlBcWZsTHNkbE1EeXprQm14VT0=");
 
             InitializeComponent();
 

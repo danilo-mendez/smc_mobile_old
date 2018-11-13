@@ -21,7 +21,7 @@ namespace Smc.Mobile.Views.Client
 
         private void Entry2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (e.NewTextValue.Length == 3)
+            if (e.NewTextValue.Length == 2)
             {
                 Entry3.Focus();
             }

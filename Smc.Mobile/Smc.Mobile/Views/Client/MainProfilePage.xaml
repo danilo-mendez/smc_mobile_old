@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.MainProfilePage">
     <NavigationPage.TitleView>
@@ -20,11 +22,32 @@
                HorizontalTextAlignment="Center" />
 
         <!-- Body -->
-        <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
+        <FlexLayout FlexLayout.Grow="1" Margin="40 , 20, 20, 40">
 
             <ScrollView FlexLayout.Grow="1">
 
                 <StackLayout>
+                    <!--<inputLayout:SfTextInputLayout Hint="Name"  BackgroundColor="White" ContainerBackgroundColor="White" >
+                        <Entry Text="" HorizontalOptions="FillAndExpand" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout Hint="Demo"  BackgroundColor="White" ContainerBackgroundColor="White" >
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="True" DataSource="{Binding GenderList}" HorizontalOptions="FillAndExpand"  ShowBorder="False" ></combobox:SfComboBox>
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout Hint="Demo"  BackgroundColor="White" ContainerBackgroundColor="White" >
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding GenderList}"  HorizontalOptions="FillAndExpand" ShowBorder="False" ShowClearButton="True" ></combobox:SfComboBox>
+                    </inputLayout:SfTextInputLayout>
+
+
+                    <inputLayout:SfTextInputLayout Hint="SfAutoComplete"   BackgroundColor="White" ContainerBackgroundColor="White" >
+                        <autocomplete:SfAutoComplete HeightRequest="40"  DataSource="{Binding GenderList}" HorizontalOptions="FillAndExpand"  ShowBorder="False" ShowClearButton="True"/>
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout Hint="Date"  BackgroundColor="White" ContainerBackgroundColor="White" >
+                        <DatePicker  HorizontalOptions="FillAndExpand"  />
+                    </inputLayout:SfTextInputLayout>-->
+                    
                     <StackLayout>
                         <Label Text="INFORMACION PRINCIPAL" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
