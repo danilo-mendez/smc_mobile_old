@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+              xmlns:local="clr-namespace:Smc.Mobile.Controls"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.DemographicPage">
 
@@ -16,10 +17,7 @@
     <FlexLayout Direction="Column">
 
         <!-- Header -->
-        <Label Text="HEADER"
-               FontSize="Large"
-               BackgroundColor="Aqua"
-               HorizontalTextAlignment="Center" />
+        <local:ProfileNavbar SelectedPage="1"  ></local:ProfileNavbar>
 
         <!-- Body -->
         <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
@@ -72,11 +70,15 @@
         </FlexLayout>
 
         <!-- Footer -->
-        <Button Style="{StaticResource ActionButtonStyle}"
-                        Command="{Binding SaveAndContinueCommand}"                
-                        Text="Continuar" >
+        <StackLayout HorizontalOptions="EndAndExpand">
+            <Button Style="{StaticResource ActionButtonStyle}"
+                    HorizontalOptions="Center"
+                    WidthRequest="240"
+                    Command="{Binding SaveAndContinueCommand}"                
+                    Text="Continuar" >
+            </Button>
+        </StackLayout>
 
-        </Button>
     </FlexLayout>
 
 

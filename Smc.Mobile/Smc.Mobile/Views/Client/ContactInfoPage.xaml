@@ -5,7 +5,7 @@
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:syncmaskededit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
-                xmlns:segmentCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+              xmlns:local="clr-namespace:Smc.Mobile.Controls"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.ContactInfoPage">
@@ -20,22 +20,7 @@
     <FlexLayout Direction="Column">
 
         <!-- Header -->
-        <buttons:SfSegmentedControl
-            x:Name="wizardNav"
-            SelectionTextColor = "White"
-            HeightRequest="80"
-            VisibleSegmentsCount="6"
-            Color="Transparent" 
-            BorderColor="#929292"
-            SelectedIndex="1"
-            FontColor="#929292"
-            BackgroundColor="Transparent" >
-            <buttons:SfSegmentedControl.SelectionIndicatorSettings>
-                <buttons:SelectionIndicatorSettings 
-                    Position="Top">
-                </buttons:SelectionIndicatorSettings>
-            </buttons:SfSegmentedControl.SelectionIndicatorSettings>
-        </buttons:SfSegmentedControl>
+        <local:ProfileNavbar SelectedPage="3"  ></local:ProfileNavbar>
 
         <!-- Body -->
         <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
@@ -148,11 +133,16 @@
         </FlexLayout>
 
         <!-- Footer -->
-        <Button Style="{StaticResource ActionButtonStyle}"
-                        Command="{Binding SaveAndContinueCommand}"                
-                        Text="Continuar" >
+        <StackLayout HorizontalOptions="EndAndExpand">
+            <Button Style="{StaticResource ActionButtonStyle}"
+                    HorizontalOptions="Center"
+                    WidthRequest="240"
+                    Command="{Binding SaveAndContinueCommand}"                
+                    Text="Continuar" >
+            </Button>
+        </StackLayout>
 
-        </Button>
+ 
     </FlexLayout>
 
 </ContentPage>
