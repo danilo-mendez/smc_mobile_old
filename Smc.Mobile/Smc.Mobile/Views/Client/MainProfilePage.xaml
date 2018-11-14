@@ -30,7 +30,7 @@
             HorizontalOptions="StartAndExpand"
             BackgroundColor="Transparent" >
             <segmentCollection:List x:TypeArguments="x:String">
-                <x:String>Formals</x:String>
+                <x:String>Formas</x:String>
                 <x:String>Casuals</x:String>
                 <x:String>Trendy</x:String>
             </segmentCollection:List>
