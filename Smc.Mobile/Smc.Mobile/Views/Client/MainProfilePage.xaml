@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
               xmlns:local="clr-namespace:Smc.Mobile.Controls"
@@ -76,10 +77,12 @@
                         <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2018"  Date="06/21/2018"  HorizontalOptions="FillAndExpand"  />
                     </StackLayout>
 
-
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Sexo" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding GenderList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Sexo" Style="{StaticResource FormLabelStyle}"></Label>
+                        <buttons:SfRadioGroup Orientation="Horizontal" Margin="0, 20, 0, 0">
+                            <buttons:SfRadioButton Text="Femenino"  FontSize="{StaticResource LargeSize }"/>
+                            <buttons:SfRadioButton Text="Masculino"  FontSize="{StaticResource LargeSize }"/>
+                        </buttons:SfRadioGroup>
                     </StackLayout>
 
                     <StackLayout>
@@ -89,20 +92,16 @@
 
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Ciudadano Americano o Autorizado a Trabajar" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Ciudadano Americano" Style="{StaticResource FormLabelStyle}"  ></Label>
+                            <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Servicio Selectivo" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <buttons:SfRadioGroup Orientation="Horizontal" Margin="0, 20, 0, 0">
+                            <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        </buttons:SfRadioGroup>
                     </StackLayout>
-
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Fecha Verificación Registro Servicio Selectivo" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2018"  Date="06/21/2018"  HorizontalOptions="FillAndExpand"  />
-                    </StackLayout>
-
                 </StackLayout>
             </ScrollView>
         </FlexLayout>

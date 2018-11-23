@@ -29,8 +29,27 @@
 
                 <StackLayout>
                     <StackLayout>
-                        <Label Text="TELEFONOS DE CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <Label Text="CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">
+                        <Label Text="Telefono y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
+                        <StackLayout>
+                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
+                            <syncfusion:SfRadioGroup Orientation="Horizontal">
+                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
+                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
+                            </syncfusion:SfRadioGroup>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Correo Electrónico" Style="{StaticResource FormLabelStyle}"></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -43,91 +62,25 @@
                         </syncfusion:SfRadioGroup>
                     </StackLayout>
 
+                    <StackLayout>
+                        <Label Text="LICENCIA DE CONDUCIR" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                    </StackLayout>
+
+
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">
-                        <Label Text="Telefono 1 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <StackLayout>
-                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
-                            <syncfusion:SfRadioGroup Orientation="Horizontal">
-                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
-                            </syncfusion:SfRadioGroup>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Telefono 2 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <StackLayout>
-                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
-                            <syncfusion:SfRadioGroup Orientation="Horizontal">
-                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
-                            </syncfusion:SfRadioGroup>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Telefono 3 y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <StackLayout> 
-
-                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
-                            <syncfusion:SfRadioGroup Orientation="Horizontal">
-                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
-                            </syncfusion:SfRadioGroup>
-                        </StackLayout>
+                        <Label Text="Tiene Licencia?" Style="{StaticResource FormLabelStyle}"></Label>
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"  Margin="0, 20, 0, 0" />
+                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding LicenseCategoryList}"  HorizontalOptions="FillAndExpand"   Margin="20, 0, 0, 0"></combobox:SfComboBox>
                     </StackLayout>
 
-                    <StackLayout>
-                        <Label Text="EMAIL DE CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
-                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Correo Electrónico" Style="{StaticResource FormLabelStyle}"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Correo Electrónico 2" Style="{StaticResource FormLabelStyle}"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-
-                    <StackLayout>
-                        <Label Text="INFORMACION DE PERSONA DE CONTACTO" Style="{StaticResource SubTitleLabelStyle}"/>
-                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
-                    </StackLayout>
-
-                    <!--<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-
-
-                    <StackLayout>
-                        <Label Text="DIRECCION POSTAL" Style="{StaticResource SubTitleLabelStyle}"/>
-                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
-                    </StackLayout>
-
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>-->
-
+                  <StackLayout>
+                    <Label Text="NIVEL EDUCACIONAL MAS ALTO COMPLETADO" Style="{StaticResource SubTitleLabelStyle}"/>
+                    <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                  </StackLayout>
+                  <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">
+                    <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding HighestEducationalLevelCompletedList}"  HorizontalOptions="FillAndExpand"   Margin="20, 0, 0, 0"></combobox:SfComboBox>
+                  </StackLayout>
                 </StackLayout>
             </ScrollView>
         </FlexLayout>

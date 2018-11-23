@@ -6,16 +6,15 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Label Text="Welcome to Xamarin Forms and Prism!!" />
         
-        <Label  Text="Forgot password?"
-                            TextColor="{StaticResource LightAccentColor}"
-                        VerticalOptions="Center" 
-                        HorizontalOptions="Center">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer   Command="{Binding Path=GotoRegisterClientCommand}"></TapGestureRecognizer>
-            </Label.GestureRecognizers>
-        </Label>
+
+      <Button Style="{StaticResource ActionButtonStyle}"
+                  HorizontalOptions="Center"
+                  WidthRequest="240"
+                  Command="{Binding GotoRegisterClientCommand}"
+                  Text="Autoregistro" >
+      </Button>
     </StackLayout>
 
 </ContentPage>

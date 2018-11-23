@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
               xmlns:local="clr-namespace:Smc.Mobile.Controls"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.DemographicPage">
@@ -30,8 +31,8 @@
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Hispano o Latino" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Hispano o Latino" Style="{StaticResource FormLabelStyle}"  WidthRequest="400" ></Label>
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
 
                  
@@ -43,26 +44,26 @@
 
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Blanco" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Blanco" Style="{StaticResource FormLabelStyle}" WidthRequest="400" ></Label>
+                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}" WidthRequest="400"  ></Label>
+                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}"  WidthRequest="400" ></Label>
+                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}" WidthRequest="400"  ></Label>
+                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding YesNoOptionsList}"  HorizontalOptions="FillAndExpand"  ></combobox:SfComboBox>
+                        <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}" WidthRequest="400"  ></Label>
+                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
 
                 </StackLayout>

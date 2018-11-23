@@ -10,8 +10,9 @@ namespace Smc.Mobile.ViewModels.Client
         public ClientModelBase(INavigationService navigationService)
             : base(navigationService)
         {
-            
 
+       
         }
+
     }
 }
