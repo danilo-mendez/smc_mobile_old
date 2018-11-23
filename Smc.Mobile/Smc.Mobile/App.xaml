@@ -20,7 +20,7 @@
             <Color x:Key="MediumGray">#BABCBF</Color>
             <Color x:Key="SteelGray">#6D6D70</Color>
             <Color x:Key="BrandColor">#394A76</Color>
-            <Color x:Key="BrandAccentColor">#87A3BA</Color>
+            <Color x:Key="BrandAccentColor">#444344</Color>
             <Color x:Key="PrimarBackground">#202e46</Color>
             <Color x:Key="LightButtonBackgroundColor">#99a0aa</Color>
             <Color x:Key="LightAccentColor">#EAEAEC</Color>
@@ -103,9 +103,9 @@
                    TargetType="{x:Type Label}"
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontSize"
-                    Value="{StaticResource MediumSize}" />
+                    Value="{StaticResource LargeSize}" />
                 <Setter Property="WidthRequest"
-                    Value="200" />
+                    Value="250" />
                 <Setter Property="Margin"
                     Value="0, 20, 0, 0" />
             </Style>

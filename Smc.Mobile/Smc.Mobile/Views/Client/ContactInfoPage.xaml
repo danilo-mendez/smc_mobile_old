@@ -12,7 +12,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout>
-            <Label Text="Informacion de Contacto" Style="{StaticResource PageTitleLabelStyle}"  HorizontalOptions="CenterAndExpand"></Label>
+            <Label Text="Información de Contacto" Style="{StaticResource PageTitleLabelStyle}"  HorizontalOptions="CenterAndExpand"></Label>
         </StackLayout>
     </NavigationPage.TitleView>
 
@@ -75,7 +75,7 @@
                     </StackLayout>
 
                   <StackLayout>
-                    <Label Text="NIVEL EDUCACIONAL MAS ALTO COMPLETADO" Style="{StaticResource SubTitleLabelStyle}"/>
+                    <Label Text="NIVEL EDUCAciónAL MAS ALTO COMPLETADO" Style="{StaticResource SubTitleLabelStyle}"/>
                     <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                   </StackLayout>
                   <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">

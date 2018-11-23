@@ -65,6 +65,9 @@
     <PackageReference Include="LiveXAML">
       <Version>2.1.45</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Licensing">
       <Version>16.3.0.29</Version>
     </PackageReference>

@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="LiveXAML" Version="2.1.45" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Syncfusion.Licensing" Version="16.3.0.29" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="16.3.0.29" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="16.3.0.29" />
@@ -31,6 +32,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Client\StartPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Client\WelcomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

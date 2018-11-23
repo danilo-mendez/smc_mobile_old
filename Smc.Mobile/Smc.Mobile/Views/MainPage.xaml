@@ -9,12 +9,16 @@
         <Label Text="Welcome to Xamarin Forms and Prism!!" />
         
 
-      <Button Style="{StaticResource ActionButtonStyle}"
-                  HorizontalOptions="Center"
-                  WidthRequest="240"
-                  Command="{Binding GotoRegisterClientCommand}"
-                  Text="Autoregistro" >
-      </Button>
+      <StackLayout HorizontalOptions="EndAndExpand">
+
+        <Button Style="{StaticResource ActionButtonStyle}"
+                    HorizontalOptions="Center"
+                    WidthRequest="240"
+                    Command="{Binding GotoRegisterClientCommand}"
+                    Text="Autoregistro" >
+        </Button>
+
+      </StackLayout>
     </StackLayout>
 
 </ContentPage>

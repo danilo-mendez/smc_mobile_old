@@ -25,7 +25,7 @@
 
                 <StackLayout>
                     <StackLayout>
-                        <Label Text="DIRECCION FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <Label Text="DIRECción FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
 
@@ -39,10 +39,19 @@
                         <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                        <Label Text="Zip/Pueblo/Estado" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
                         <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" ></Entry>
+                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
                     </StackLayout>
 
+
+                  <Button BackgroundColor="{StaticResource LightAccentColor}"
+                     HorizontalOptions="Center"
+                        Margin="0, 30, 0, 30"
+                     Command="{Binding SaveAndContinueCommand}"
+                     Text="Copiar dirección" >
+                  </Button>
 
                     <StackLayout>
                         <Label Text="DIRECCION POSTAL" Style="{StaticResource SubTitleLabelStyle}"/>
@@ -59,8 +68,10 @@
                         <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Zip Code" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                      <Label Text="Zip/Pueblo/Estado" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
+                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" ></Entry>
+                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
                     </StackLayout>
 
                 </StackLayout>

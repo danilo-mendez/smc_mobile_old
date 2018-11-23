@@ -7,8 +7,7 @@ namespace Smc.Mobile.Views.Client
         public StartPage()
         {
             InitializeComponent();
-           // NavigationPage.SetHasNavigationBar(this, false);
-
+            // NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void Entry1_TextChanged(object sender, TextChangedEventArgs e)

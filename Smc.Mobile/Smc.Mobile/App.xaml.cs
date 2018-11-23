@@ -1,5 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
+using Smc.Mobile.Api;
 using Smc.Mobile.ViewModels;
 using Smc.Mobile.ViewModels.Client;
 using Smc.Mobile.Views;
@@ -38,8 +39,10 @@ namespace Smc.Mobile
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<CreateClientNavigationPage>();
+            
 
             containerRegistry.Register<IBusyService, BusyService>();
+            containerRegistry.Register<IProxyClientApi, WebClientApi>();
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();
@@ -47,6 +50,7 @@ namespace Smc.Mobile
             containerRegistry.RegisterForNavigation<DemographicPage, DemographicPageViewModel>();
             containerRegistry.RegisterForNavigation<AddressPage, AddressPageViewModel>();
             containerRegistry.RegisterForNavigation<ContactInfoPage, ContactInfoPageViewModel>();
+            containerRegistry.RegisterForNavigation<WelcomePage, WelcomePageViewModel>();
         }
     }
 }
