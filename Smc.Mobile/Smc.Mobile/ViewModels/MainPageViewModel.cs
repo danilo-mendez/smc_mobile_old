@@ -24,6 +24,13 @@ namespace Smc.Mobile.ViewModels
             LoadData();
         }
 
+        string tabletInfo;
+        public string TabletInfo
+        {
+            get { return tabletInfo; }
+            set { SetProperty(ref tabletInfo, value); }
+        }
+
         private void LoadData()
         {
             Device.BeginInvokeOnMainThread(async () =>
@@ -68,6 +75,10 @@ namespace Smc.Mobile.ViewModels
                                 }
 
                             }
+                            else
+                            {
+                                TabletInfo = $"Tablet: {result.Data.Name}, id: {result.Data.InternalId}";
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -93,40 +104,6 @@ namespace Smc.Mobile.ViewModels
                     await this.NavigationService.NavigateAsync("/CreateClientNavigationPage/WelcomePage", null, false);
 
                 });
-                //return new DelegateCommand(() =>
-                //{
-                   
-
-                //    //if (!LoginModel.CheckIsSavable())
-                //    //    return;
-
-                //    Device.BeginInvokeOnMainThread(async () =>
-                //    {
-                //        await this.NavigationService.NavigateAsync("/StartPage", null, false);
-                //        //using (this.BusyService.BeginBusy())
-                //        //{
-                //        //    try
-                //        //    {
-                //        //        //await LoginModel.Login();
-                //        //        //CrossSettings.Current.Set("UserId", LoginModel.UserId);
-                //        //        //CrossSettings.Current.Set("Token", LoginModel.Token);
-                //        //        //CrossSettings.Current.Set("HeightUnit", LoginModel.HeightUnit);
-                //        //        //CrossSettings.Current.Set("WeightUnit", LoginModel.WeightUnit);
-                //        //        //CrossSettings.Current.Set("Email", LoginModel.Email);
-                //        //        //CrossSettings.Current.Set("UserId", LoginModel.UserId ?? Guid.Empty);
-
-                             
-
-                //        //    }
-                //        //    catch (Exception ex)
-                //        //    {
-                //        //        HandleException(ex);
-                //        //    }
-
-                //        //}
-
-                //    });
-                //});
             }
         }
 
@@ -136,9 +113,25 @@ namespace Smc.Mobile.ViewModels
             {
                 return new DelegateCommand(async () =>
                 {
-                    await this.NavigationService.NavigateAsync("/CreateClientNavigationPage/SignaturePadPage", null, false);
+                    try
+                    {
+                        var response = await this.apiService.GetPendingSignatureInfo();
+                        if (response.Data != null && response.Data.Id > 0)
+                        {
+                            await this.NavigationService.NavigateAsync("SignaturePadPage", null, false);
+                        }
+                        else
+                        {
+                            DisplayeAlert("No existe reporte pendiente para esta tablet");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        HandleException(ex);
+                    }
+
                 });
-     
+
             }
         }
     }

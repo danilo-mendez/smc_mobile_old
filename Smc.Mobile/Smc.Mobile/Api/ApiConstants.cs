@@ -13,6 +13,8 @@ namespace Smc.Mobile.Api
         public const string ZipCode = @"zipcode?zip=";
         public const string GetTableInfo = @"GetTableInfo?internalId=";
         public const string RegisterTablet = @"RegisterTablet";
+        public const string Sign = @"Sign?internalId=";
+        public const string GetSignatureInfo = @"GetSignatureInfo?internalId=";
 
     }
 }

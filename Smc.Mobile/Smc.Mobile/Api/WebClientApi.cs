@@ -191,5 +191,28 @@ namespace Smc.Mobile.Api
                 return await HandleResponseAsync<TResponse>(response);
             }
         }
+
+        public override async Task<ResponseEnvelope<TResponse>> UploadBitmapAsync<TResponse>(string url, byte[] bitmapData, string parameterName)
+        {
+            PrepareAuthorizeData();
+
+            var fileContent = new ByteArrayContent(bitmapData);
+
+            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/octet-stream");
+            fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+            {
+                Name = parameterName,
+                FileName = "my_uploaded_image.png"
+            };
+
+            MultipartFormDataContent multipartContent = new MultipartFormDataContent();
+            multipartContent.Add(fileContent);
+
+            HttpClient httpClient = new HttpClient();
+            using (var response = await Client.PostAsync(url, multipartContent))
+            {
+                return await HandleResponseAsync<TResponse>(response);
+            }
+        }
     }
 }

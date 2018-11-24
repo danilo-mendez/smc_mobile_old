@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:local="clr-namespace:Smc.Mobile.Converter"
+             xmlns:local="clr-namespace:Smc.Mobile.Controls"
             xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
              x:Class="Smc.Mobile.Views.Signature.SignaturePadPage">
 
@@ -23,21 +23,26 @@
 
         <ContentView Padding="1" BackgroundColor="#B8860B" x:Name="padContainer">
             <controls:SignaturePadView
-                x:Name="signatureView" StrokeCompleted="SignatureChanged" Cleared="SignatureChanged"
+                x:Name="signatureView" 
                 CaptionTextColor="#B8860B" ClearTextColor="#B8860B" PromptTextColor="#B8860B"
-                SignatureLineColor="#B8860B" BackgroundColor="#FAFAD2" />
+                SignatureLineColor="#000000" BackgroundColor="#FFFFFF">
+            </controls:SignaturePadView>
+
+            <!--<controls:SignaturePadView
+                x:Name="signaturePadView"
+                ClearedCommand="{Binding ClearedCommand}"
+                CaptionTextColor="#B8860B" ClearTextColor="#B8860B" PromptTextColor="#B8860B"
+                SignatureLineColor="#B8860B" BackgroundColor="#FAFAD2">
+                <controls:SignaturePadView.Behaviors>
+                    <local:CaptureSignaturePointsBehavior Points="{Binding CurrentSignature}" />
+                </controls:SignaturePadView.Behaviors>
+            </controls:SignaturePadView>-->
         </ContentView>
 
-        <Button
-            x:Name="btnSave" Text="Save Vector" Clicked="SaveVectorClicked"
-            HorizontalOptions="Start" VerticalOptions="End" Grid.Row="2" />
+
 
         <Button
-            x:Name="btnLoad" Text="Load Vector" Clicked="LoadVectorClicked"
-            HorizontalOptions="Center" VerticalOptions="End" Grid.Row="2" />
-
-        <Button
-            x:Name="btnSaveImage" Text="Save Image" Clicked="SaveImageClicked"
+            x:Name="btnSaveImage" Text="Save Image"  Command="{Binding SaveSignatureCommand}"
             HorizontalOptions="End" VerticalOptions="End" Grid.Row="2" />
 
     </Grid>

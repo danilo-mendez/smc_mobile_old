@@ -13,5 +13,7 @@ namespace Smc.Mobile.Api
         Task<ResponseEnvelope<TResponse>> PostJsonRequestWithParamsAsync<TResponse>(string url, List<KeyValuePair<string, object>> param);
         Task<ResponseEnvelope<TResponse>> PutBytesRequestAsync<TResponse, TRequest>(string url, TRequest request) where TRequest : class;
         Task<ResponseEnvelope<TResponse>> PutJsonRequestAsync<TResponse, TRequest>(string url, TRequest request) where TRequest : class;
+
+        Task<ResponseEnvelope<TResponse>> UploadBitmapAsync<TResponse>(string url, byte[] bitmapData, string parameterName);
     }
 }

@@ -15,6 +15,10 @@ namespace Smc.Mobile.Api
 
         Task<ServiceResponse<Boolean>> Register(String name);
 
+        Task<ServiceResponse<PendingSignatureResponseDto>> GetPendingSignatureInfo();
+
+        Task<ServiceResponse<Boolean>> Sign(byte[] data);
+
     }
 
     public class ApiService : IApiService
@@ -25,6 +29,7 @@ namespace Smc.Mobile.Api
         {
             this.proxyClient = proxyClient;
         }
+
 
         public async Task<ServiceResponse<TabletInfoResponsetDto>> GetRegistrationInfo()
         {
@@ -70,8 +75,43 @@ namespace Smc.Mobile.Api
             {
                 return await Task.FromResult(ServiceResponse<Boolean>.Error(result != null ? result.Message : "Unmanaged exception"));
             }
-
          
+        }
+
+        public async Task<ServiceResponse<PendingSignatureResponseDto>> GetPendingSignatureInfo()
+        {
+            string id = CrossDevice.Device.DeviceId;
+
+            var result = await proxyClient.GetRequestAsync<PendingSignatureResponseDto>(ApiConstants.GetSignatureInfo + id);
+
+            if (result.Ack == AckCode.Success && result.Data != null)
+            {
+
+                return await Task.FromResult(ServiceResponse<PendingSignatureResponseDto>.Success(result.Data));
+            }
+            else
+            {
+                return await Task.FromResult(ServiceResponse<PendingSignatureResponseDto>.Error(result != null ? result.Message : "Unmanaged exception"));
+            }
+        }
+
+        public async Task<ServiceResponse<bool>> Sign(byte[] data)
+        {
+            string id = CrossDevice.Device.DeviceId;
+
+            var result = await proxyClient.UploadBitmapAsync<ResultResponseDto>(
+                ApiConstants.Sign + id,
+                data,
+                "file");
+
+            if (result.Ack == AckCode.Success)
+            {
+                return await Task.FromResult(ServiceResponse<Boolean>.Success(true));
+            }
+            else
+            {
+                return await Task.FromResult(ServiceResponse<Boolean>.Error(result != null ? result.Message : "Unmanaged exception"));
+            }
         }
     }
 }

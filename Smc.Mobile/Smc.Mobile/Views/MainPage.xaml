@@ -4,9 +4,12 @@
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              x:Class="Smc.Mobile.Views.MainPage"
              Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Icon="ico_setting.png" Priority="1"   Command="{Binding Path=SettingCommand}"   />
+    </ContentPage.ToolbarItems>
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!!" />
+        <Label Text="{Binding TabletInfo}" />
         
 
       <StackLayout HorizontalOptions="EndAndExpand">

@@ -27,5 +27,7 @@ namespace Smc.Mobile.Api
         public abstract Task<ResponseEnvelope<TResponse>> PostJsonRequestWithParamsAsync<TResponse>(string url, List<KeyValuePair<string, object>> param);
         public abstract Task<ResponseEnvelope<TResponse>> PutBytesRequestAsync<TResponse, TRequest>(string url, TRequest request) where TRequest : class;
         public abstract Task<ResponseEnvelope<TResponse>> PutJsonRequestAsync<TResponse, TRequest>(string url, TRequest request) where TRequest : class;
+
+        public abstract Task<ResponseEnvelope<TResponse>> UploadBitmapAsync<TResponse>(string url, byte[] bitmapData, string parameterName);
     }
 }
