@@ -42,7 +42,7 @@ namespace Smc.Mobile
             
 
             containerRegistry.Register<IBusyService, BusyService>();
-            containerRegistry.Register<IProxyClientApi, WebClientApi>();
+            containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(ApiConstants.Baseurl));
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();

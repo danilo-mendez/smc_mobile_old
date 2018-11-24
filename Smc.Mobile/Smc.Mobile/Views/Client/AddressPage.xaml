@@ -40,9 +40,9 @@
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Zip/Pueblo/Estado" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" ></Entry>
-                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding PhysicalAddressZipCode}"  ></Entry>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding PhysicalAddressCity}" ></Entry>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding PhysicalAddressState}"  ></Entry>
                     </StackLayout>
 
 
