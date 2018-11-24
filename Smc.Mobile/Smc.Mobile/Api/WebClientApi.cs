@@ -51,7 +51,11 @@ namespace Smc.Mobile.Api
             }
             else
             {
-                return await ResponseEnvelope<TResponse>.SuccessAsync(JsonConvert.DeserializeObject<TResponse>(result));
+                var obj = JsonConvert.DeserializeObject<ResponseEnvelope<TResponse>>(result);
+
+                return await Task.FromResult(obj);
+
+              //  return await ResponseEnvelope<TResponse>.SuccessAsync(JsonConvert.DeserializeObject<TResponse>(result));
             }
 
 
@@ -85,20 +89,11 @@ namespace Smc.Mobile.Api
             //authorize
             PrepareAuthorizeData();
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            try
+            using (var response = await Client.GetAsync(url))
             {
-                using (var response = await Client.GetAsync(url))
-                {
-                    return await HandleResponseAsync<TResponse>(response);
-                }
+                return await HandleResponseAsync<TResponse>(response);
             }
-            catch (Exception ex)
-            {
 
-                return null;
-            }
-         
         }
 
         public override async Task<ResponseEnvelope<TResponse>> PostJsonRequestAsync<TResponse, TRequest>(string url, TRequest request)

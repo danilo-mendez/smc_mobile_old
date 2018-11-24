@@ -1,6 +1,9 @@
-﻿using Prism.Commands;
+﻿using Acr.UserDialogs;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Smc.Mobile.Api;
+using SMC.Mobile.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +14,70 @@ namespace Smc.Mobile.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(INavigationService navigationService) 
-            : base (navigationService)
+        private IApiService apiService;
+        public MainPageViewModel(INavigationService navigationService, IBusyService busyService, IApiService apiService)
+            : base(navigationService, busyService)
         {
-            Title = "Main Page";
+            this.apiService = apiService;
+            Title = "Bienvenido";
+
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                using (this.BusyService.BeginBusy())
+                {
+                    try
+                    {
+                        var result = await apiService.GetRegistrationInfo();
+
+                        if (result.ResponseCode != ResponseCodes.Success)
+                        {
+                            DisplayeAlert(result.Message);
+                        }
+                        else
+                        {
+                            if (result.Data.Id == 0)
+                            {
+                                var promptConfig = new PromptConfig
+                                {
+                                    InputType = InputType.Name,
+                                    IsCancellable = false,
+                                    Message = "Ingrese codigo tableta"
+                                };
+
+                                var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
+                                if (dialogResult.Ok)
+                                {
+                                    if (!String.IsNullOrEmpty(dialogResult.Text))
+                                    {
+                                        var registerResult = await apiService.Register(dialogResult.Text);
+                                        if (registerResult.ResponseCode == ResponseCodes.Success)
+                                        {
+                                            await UserDialogs.Instance.AlertAsync("Tableta Registrada exitosamente");
+                                        }
+                                        else
+                                        {
+                                            DisplayeAlert(registerResult.Message);
+                                        }
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        HandleException(ex);
+                    }
+
+                }
+
+            });
         }
 
 
@@ -64,6 +127,18 @@ namespace Smc.Mobile.ViewModels
 
                 //    });
                 //});
+            }
+        }
+
+        public DelegateCommand GotoSignaturePadCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await this.NavigationService.NavigateAsync("/CreateClientNavigationPage/SignaturePadPage", null, false);
+                });
+     
             }
         }
     }

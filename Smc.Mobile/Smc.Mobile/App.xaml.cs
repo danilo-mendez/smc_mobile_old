@@ -5,6 +5,7 @@ using Smc.Mobile.ViewModels;
 using Smc.Mobile.ViewModels.Client;
 using Smc.Mobile.Views;
 using Smc.Mobile.Views.Client;
+using Smc.Mobile.Views.Signature;
 using SMC.Mobile.Infrastructure;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -42,6 +43,7 @@ namespace Smc.Mobile
             
 
             containerRegistry.Register<IBusyService, BusyService>();
+            containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(ApiConstants.Baseurl));
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
@@ -51,6 +53,7 @@ namespace Smc.Mobile
             containerRegistry.RegisterForNavigation<AddressPage, AddressPageViewModel>();
             containerRegistry.RegisterForNavigation<ContactInfoPage, ContactInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<WelcomePage, WelcomePageViewModel>();
+            containerRegistry.RegisterForNavigation<SignaturePadPage, SignaturePadPageViewModel>();
         }
     }
 }

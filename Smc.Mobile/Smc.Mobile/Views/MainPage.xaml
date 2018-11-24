@@ -18,7 +18,15 @@
                     Text="Autoregistro" >
         </Button>
 
-      </StackLayout>
+            <Button Style="{StaticResource ActionButtonStyle}"
+                    HorizontalOptions="Center"
+                    WidthRequest="240"
+                    Margin="0, 0, 0, 20"
+                    Command="{Binding GotoSignaturePadCommand}"
+                    Text="Firmar" >
+            </Button>
+
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

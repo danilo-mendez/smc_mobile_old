@@ -1,6 +1,8 @@
-﻿using Prism.Commands;
+﻿using Acr.UserDialogs;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Smc.Mobile.Api;
 using SMC.Mobile.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -234,25 +236,30 @@ namespace Smc.Mobile.ViewModels
             set => SetProperty(ref _title, value);
         }
 
+        protected async void DisplayeAlert(String message)
+        {
+            await UserDialogs.Instance.AlertAsync(message);
+        }
+
         protected async void HandleException(Exception ex)
         {
-            //if (ex is ApiException)
-            //{
-            //    var apiException = ex as ApiException;
-            //    switch (apiException.HttpStatusCode)
-            //    {
-            //        case System.Net.HttpStatusCode.NotFound:
+            if (ex is ApiException)
+            {
+                var apiException = ex as ApiException;
+                switch (apiException.HttpStatusCode)
+                {
+                    case System.Net.HttpStatusCode.NotFound:
 
-            //            break;
-            //    }
-            //    await UserDialogs.Instance.AlertAsync("Code: " + apiException.HttpStatusCode.ToString(), apiException.Message);
-            //}
-            //else
-            //{
+                        break;
+                }
+                await UserDialogs.Instance.AlertAsync("Code: " + apiException.HttpStatusCode.ToString(), apiException.Message);
+            }
+            else
+            {
 
-            //    await UserDialogs.Instance.AlertAsync("General Failure, please try again");
-            //}
-            //System.Console.WriteLine(ex);
+                await UserDialogs.Instance.AlertAsync("General Failure, please try again");
+            }
+            System.Console.WriteLine(ex);
         }
     }
 }

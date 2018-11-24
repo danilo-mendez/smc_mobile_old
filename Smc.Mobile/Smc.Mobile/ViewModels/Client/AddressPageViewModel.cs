@@ -7,6 +7,7 @@ using SMC.Mobile.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace Smc.Mobile.ViewModels.Client
 {
@@ -15,7 +16,7 @@ namespace Smc.Mobile.ViewModels.Client
 
         private IProxyClientApi proxyClient;
         public AddressPageViewModel(INavigationService navigationService, IBusyService busyService, IProxyClientApi proxyClient)
-        : base(navigationService, busyService)
+            : base(navigationService, busyService)
         {
             this.proxyClient = proxyClient;
             Title = "Bienvenido";
@@ -68,16 +69,26 @@ namespace Smc.Mobile.ViewModels.Client
             }
         }
 
-        public async void LoadZipCode(string zipCode)
+        public  void LoadZipCode(string zipCode)
         {
-            var result = await proxyClient.GetRequestAsync<ZipCodeDto>($"{ApiConstants.ZipCode}{zipCode}");
 
-            //if (result.Ack == AckCode.Success)
-            //{
-            //    if (result.Data != null)
-            //    {
-            //    }
-            //}
+            Device.BeginInvokeOnMainThread( async () =>
+            {
+                using (this.BusyService.BeginBusy())
+                {
+                    var result = await proxyClient.GetRequestAsync<ZipCodeDto>($"{ApiConstants.ZipCode}{zipCode}");
+
+                    if (result != null && result.Ack == AckCode.Success)
+                    {
+                        if (result.Data != null)
+                        {
+                            PhysicalAddressCity = result.Data.City;
+                            PhysicalAddressState = result.Data.State;
+                        }
+                    }
+                }
+
+            });
         }
     }
 }
