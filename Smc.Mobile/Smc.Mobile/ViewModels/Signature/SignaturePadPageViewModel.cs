@@ -47,6 +47,7 @@ namespace Smc.Mobile.ViewModels
                                 StrokeWidth = 1f
                             };
 
+
                                 using (var bitmap = await GetImageStreamAsync(SignatureImageFormat.Png, settings))
                                 {
                                     using (var memoryStream = new MemoryStream())
