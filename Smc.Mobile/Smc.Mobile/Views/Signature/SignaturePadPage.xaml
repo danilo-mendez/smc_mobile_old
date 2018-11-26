@@ -24,7 +24,7 @@
         <ContentView Padding="1" BackgroundColor="#B8860B" x:Name="padContainer">
             <controls:SignaturePadView
                 x:Name="signatureView" 
-                CaptionTextColor="#B8860B" ClearTextColor="#B8860B" PromptTextColor="#B8860B"
+                CaptionTextColor="#B8860B"  PromptTextColor="#B8860B" ClearText="Borrar" ClearTextColor="Black"
                 SignatureLineColor="#000000" BackgroundColor="#FFFFFF">
             </controls:SignaturePadView>
 
@@ -39,11 +39,16 @@
             </controls:SignaturePadView>-->
         </ContentView>
 
+        <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="StartAndExpand"  VerticalOptions="End">
+            <Button
+                Text="Volver"  Command="{Binding GoBackCommand}" BackgroundColor="White" BorderColor="Blue"
+                HorizontalOptions="Start"  />
 
+            <Button
+                x:Name="btnSaveImage" Text="Firmar"  Command="{Binding SaveSignatureCommand}"
+                HorizontalOptions="End"  />
+        </StackLayout>
 
-        <Button
-            x:Name="btnSaveImage" Text="Save Image"  Command="{Binding SaveSignatureCommand}"
-            HorizontalOptions="End" VerticalOptions="End" Grid.Row="2" />
 
     </Grid>
 
