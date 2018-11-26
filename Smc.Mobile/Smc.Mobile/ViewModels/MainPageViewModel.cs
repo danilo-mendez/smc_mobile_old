@@ -164,7 +164,28 @@ namespace Smc.Mobile.ViewModels
             {
                 return new DelegateCommand(async () =>
                 {
-                    await this.NavigationService.NavigateAsync("SettingsPage", null, false);
+                    var promptConfig = new PromptConfig
+                    {
+                        InputType = InputType.NumericPassword,
+                        IsCancellable = false,
+                        Message = "Ingrese clave"
+                    };
+
+                    var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
+                    if (dialogResult.Ok)
+                    {
+                        if (!String.IsNullOrEmpty(dialogResult.Text) && dialogResult.Text == "8521")
+                        {
+                            await this.NavigationService.NavigateAsync("SettingsPage", null, false);
+                        }
+                        else
+                        {
+                            await UserDialogs.Instance.AlertAsync("Clave invalida");
+                        }
+
+                    }
+
+               
 
                 });
             }
