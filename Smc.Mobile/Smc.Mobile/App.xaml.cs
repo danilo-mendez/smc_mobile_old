@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using Acr.Settings;
+using Prism;
 using Prism.Ioc;
 using Smc.Mobile.Api;
 using Smc.Mobile.ViewModels;
@@ -40,11 +41,13 @@ namespace Smc.Mobile
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<CreateClientNavigationPage>();
-            
+
+            string baseurl = CrossSettings.Current.Get<string>("Url", ApiConstants.Baseurl);
+
 
             containerRegistry.Register<IBusyService, BusyService>();
             containerRegistry.Register<IApiService, ApiService>();
-            containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(ApiConstants.Baseurl));
+            containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(baseurl));
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();

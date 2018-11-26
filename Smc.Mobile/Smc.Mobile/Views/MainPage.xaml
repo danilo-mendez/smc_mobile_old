@@ -18,6 +18,7 @@
                     HorizontalOptions="Center"
                     WidthRequest="240"
                     Command="{Binding GotoRegisterClientCommand}"
+                IsVisible="{Binding UseForRegister}"
                     Text="Autoregistro" >
         </Button>
 
@@ -26,6 +27,7 @@
                     WidthRequest="240"
                     Margin="0, 0, 0, 20"
                     Command="{Binding GotoSignaturePadCommand}"
+                IsVisible="{Binding UseForSignature}"
                     Text="Firmar" >
             </Button>
 

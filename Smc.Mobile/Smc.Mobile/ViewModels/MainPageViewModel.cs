@@ -1,4 +1,5 @@
-﻿using Acr.UserDialogs;
+﻿using Acr.Settings;
+using Acr.UserDialogs;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -22,6 +23,28 @@ namespace Smc.Mobile.ViewModels
             Title = "Bienvenido";
 
             LoadData();
+
+            CrossSettings.Current.Changed += Current_Changed;
+
+            UseForSignature = CrossSettings.Current.Get<bool>("UseForSignature", true);
+            UseForRegister = CrossSettings.Current.Get<bool>("UseForRegister", true);
+        }
+
+        private void Current_Changed(object sender, SettingChangeEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case "TabletName":
+
+                    break;
+                case "UseForSignature":
+                    UseForSignature = CrossSettings.Current.Get<bool>("UseForSignature", true);
+                    break;
+                case "UseForRegister":
+                    UseForRegister = CrossSettings.Current.Get<bool>("UseForRegister", true);
+
+                    break;
+            }
         }
 
         string tabletInfo;
@@ -134,5 +157,31 @@ namespace Smc.Mobile.ViewModels
 
             }
         }
+
+        public DelegateCommand SettingCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await this.NavigationService.NavigateAsync("SettingsPage", null, false);
+
+                });
+            }
+        }
+
+        bool useForSignature;
+        public bool UseForSignature
+        {
+            get { return useForSignature; }
+            set { SetProperty(ref useForSignature, value); }
+        }
+        bool useForRegister;
+        public bool UseForRegister
+        {
+            get { return useForRegister; }
+            set { SetProperty(ref useForRegister, value); }
+        }
+
     }
 }

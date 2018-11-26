@@ -2,7 +2,60 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             xmlns:local="clr-namespace:Smc.Mobile.Controls"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.SettingsPage">
-  
+
+    <FlexLayout Direction="Column">
+
+        <!-- Header -->
+        <!-- Body -->
+        <FlexLayout FlexLayout.Grow="1" Margin="40 , 20, 20, 40">
+
+            <ScrollView FlexLayout.Grow="1">
+
+                <StackLayout>
+                
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Url" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding Url}"  ></Entry>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Nombre Tableta" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding TabletName}"  ></Entry>
+                    </StackLayout>
+
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Tableta para firmar" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"  IsChecked="{Binding UseForSignature}"  />
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Label Text="Tableta para registrar" Style="{StaticResource FormLabelStyle}"  ></Label>
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"  IsChecked="{Binding UseForRegister}"  />
+                    </StackLayout>
+
+               
+                </StackLayout>
+            </ScrollView>
+        </FlexLayout>
+
+        <!-- Footer -->
+        <StackLayout HorizontalOptions="EndAndExpand">
+            <Button Style="{StaticResource ActionButtonStyle}"
+                    HorizontalOptions="Center"
+                    WidthRequest="240"
+                    Command="{Binding SaveCommand}"                
+                    Text="Actualizar" >
+            </Button>
+        </StackLayout>
+
+    </FlexLayout>
+    
 </ContentPage>
