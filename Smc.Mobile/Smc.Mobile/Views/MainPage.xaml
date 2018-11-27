@@ -4,34 +4,34 @@
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              x:Class="Smc.Mobile.Views.MainPage"
              Title="{Binding Title}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem  Order="Primary" Icon="ico_setting.png" Priority="1"   Command="{Binding Path=SettingCommand}"   />
-    </ContentPage.ToolbarItems>
+  <ContentPage.ToolbarItems>
+    <ToolbarItem  Order="Primary" Icon="ico_setting.png" Priority="1"   Command="{Binding Path=SettingCommand}"   />
+  </ContentPage.ToolbarItems>
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="{Binding TabletInfo}" />
-        
+  <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <Label Text="{Binding TabletInfo}"  />
 
-      <StackLayout HorizontalOptions="EndAndExpand">
 
-        <Button Style="{StaticResource ActionButtonStyle}"
-                    HorizontalOptions="Center"
-                    WidthRequest="240"
-                    Command="{Binding GotoRegisterClientCommand}"
-                IsVisible="{Binding UseForRegister}"
-                    Text="Autoregistro" >
-        </Button>
+    <StackLayout HorizontalOptions="EndAndExpand">
 
-            <Button Style="{StaticResource ActionButtonStyle}"
-                    HorizontalOptions="Center"
-                    WidthRequest="240"
-                    Margin="0, 0, 0, 20"
-                    Command="{Binding GotoSignaturePadCommand}"
-                IsVisible="{Binding UseForSignature}"
-                    Text="Firmar" >
-            </Button>
+      <Button Style="{StaticResource ActionButtonStyle}"
+                  HorizontalOptions="Center"
+                  WidthRequest="240"
+                  Command="{Binding GotoRegisterClientCommand}"
+              IsVisible="{Binding UseForRegister}"
+                  Text="Autoregistro" >
+      </Button>
 
-        </StackLayout>
+      <Button Style="{StaticResource ActionButtonStyle}"
+              HorizontalOptions="Center"
+              WidthRequest="240"
+              Margin="0, 0, 0, 20"
+              Command="{Binding GotoSignaturePadCommand}"
+          IsVisible="{Binding UseForSignature}"
+              Text="Firmar" >
+      </Button>
+
     </StackLayout>
+  </StackLayout>
 
 </ContentPage>

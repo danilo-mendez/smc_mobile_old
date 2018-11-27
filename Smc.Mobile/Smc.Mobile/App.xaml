@@ -20,7 +20,7 @@
             <Color x:Key="MediumGray">#BABCBF</Color>
             <Color x:Key="SteelGray">#6D6D70</Color>
             <Color x:Key="BrandColor">#394A76</Color>
-            <Color x:Key="BrandAccentColor">#444344</Color>
+            <Color x:Key="BrandAccentColor">#051943</Color>
             <Color x:Key="PrimarBackground">#202e46</Color>
             <Color x:Key="LightButtonBackgroundColor">#99a0aa</Color>
             <Color x:Key="LightAccentColor">#EAEAEC</Color>
@@ -148,6 +148,10 @@
                 </Style.Triggers>
             </Style>
 
+          <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource BrandAccentColor}"> </Setter>
+            <Setter Property="BarTextColor" Value="{StaticResource WhiteColor}"></Setter>
+          </Style>
 
             <Style x:Key="ActionButtonStyle" TargetType="Button">
                 <Setter Property="BorderColor" Value="Transparent"/>
