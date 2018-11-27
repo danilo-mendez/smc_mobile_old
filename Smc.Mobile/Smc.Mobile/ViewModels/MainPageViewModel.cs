@@ -20,7 +20,7 @@ namespace Smc.Mobile.ViewModels
             : base(navigationService, busyService)
         {
             this.apiService = apiService;
-            Title = "Bienvenido";
+            Title = "Bienvenido SMC Mobile";
 
             LoadData();
 
@@ -64,43 +64,46 @@ namespace Smc.Mobile.ViewModels
                     {
                         var result = await apiService.GetRegistrationInfo();
 
+                        bool initialized = false;
+
                         if (result.ResponseCode != ResponseCodes.Success)
                         {
-                            DisplayeAlert(result.Message);
+                           // DisplayeAlert("La tableta no ha sido inicializada");
                         }
                         else
                         {
-                            if (result.Data.Id == 0)
+                            if (result.Data.Id > 0)
                             {
-                                var promptConfig = new PromptConfig
-                                {
-                                    InputType = InputType.Name,
-                                    IsCancellable = false,
-                                    Message = "Ingrese codigo tableta"
-                                };
+                                initialized = true;
+                                TabletInfo = $"Tablet: {result.Data.Name}, id: {result.Data.InternalId}";
+                            }
+                        }
 
-                                var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
-                                if (dialogResult.Ok)
+                        if (!initialized)
+                        {
+                            var promptConfig = new PromptConfig
+                            {
+                                InputType = InputType.Name,
+                                IsCancellable = false,
+                                Message = "Ingrese codigo tableta"
+                            };
+
+                            var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
+                            if (dialogResult.Ok)
+                            {
+                                if (!String.IsNullOrEmpty(dialogResult.Text))
                                 {
-                                    if (!String.IsNullOrEmpty(dialogResult.Text))
+                                    var registerResult = await apiService.Register(dialogResult.Text);
+                                    if (registerResult.ResponseCode == ResponseCodes.Success)
                                     {
-                                        var registerResult = await apiService.Register(dialogResult.Text);
-                                        if (registerResult.ResponseCode == ResponseCodes.Success)
-                                        {
-                                            await UserDialogs.Instance.AlertAsync("Tableta Registrada exitosamente");
-                                        }
-                                        else
-                                        {
-                                            DisplayeAlert(registerResult.Message);
-                                        }
+                                        await UserDialogs.Instance.AlertAsync("Tableta Registrada exitosamente");
                                     }
-
+                                    else
+                                    {
+                                        DisplayeAlert(registerResult.Message);
+                                    }
                                 }
 
-                            }
-                            else
-                            {
-                                TabletInfo = $"Tablet: {result.Data.Name}, id: {result.Data.InternalId}";
                             }
                         }
                     }
