@@ -7,11 +7,6 @@
             xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
              x:Class="Smc.Mobile.Views.Signature.SignaturePadPage">
 
-    <!--<ContentPage.Resources>
-        <ResourceDictionary>
-            <local:NotConverter x:Key="NotConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>-->
 
     <Grid x:Name="LayoutRoot" Padding="12">
 
@@ -21,34 +16,25 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ContentView Padding="1" BackgroundColor="#B8860B" x:Name="padContainer">
+        <ContentView Padding="1" BackgroundColor="#FFFFFF">
             <controls:SignaturePadView
-                x:Name="signatureView" 
-                CaptionTextColor="#B8860B"  PromptTextColor="#B8860B" ClearText="Borrar" ClearTextColor="Black"
-                SignatureLineColor="#000000" BackgroundColor="#FFFFFF">
+                    x:Name="signatureView" 
+                    CaptionTextColor="#B8860B"  PromptTextColor="#B8860B" ClearText="Borrar" ClearTextColor="Black"
+                    SignatureLineColor="#000000" BackgroundColor="#FFFFFF">
             </controls:SignaturePadView>
-
-            <!--<controls:SignaturePadView
-                x:Name="signaturePadView"
-                ClearedCommand="{Binding ClearedCommand}"
-                CaptionTextColor="#B8860B" ClearTextColor="#B8860B" PromptTextColor="#B8860B"
-                SignatureLineColor="#B8860B" BackgroundColor="#FAFAD2">
-                <controls:SignaturePadView.Behaviors>
-                    <local:CaptureSignaturePointsBehavior Points="{Binding CurrentSignature}" />
-                </controls:SignaturePadView.Behaviors>
-            </controls:SignaturePadView>-->
         </ContentView>
 
-        <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="StartAndExpand"  VerticalOptions="End">
-            <Button
-                Text="Volver"  Command="{Binding GoBackCommand}" BackgroundColor="White" BorderColor="Blue"
-                HorizontalOptions="Start"  />
+        <Button
+            Text="Cancelar"
+            Command="{Binding GoBackCommand}"
+            BackgroundColor="White" BorderColor="Blue"
+            HorizontalOptions="Start" VerticalOptions="End" Grid.Row="2" />
 
-            <Button
-                x:Name="btnSaveImage" Text="Firmar"  Command="{Binding SaveSignatureCommand}"
-                HorizontalOptions="End"  />
-        </StackLayout>
-
+        <Button
+            Text="Firmar"
+            Command="{Binding SaveSignatureCommand}"
+            Style="{StaticResource ActionButtonStyle}"
+            HorizontalOptions="End" VerticalOptions="End" Grid.Row="2" />
 
     </Grid>
 
