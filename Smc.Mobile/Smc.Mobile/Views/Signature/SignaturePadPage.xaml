@@ -20,7 +20,7 @@
             <controls:SignaturePadView
                     x:Name="signatureView" 
                     CaptionTextColor="#B8860B"  PromptTextColor="#B8860B" ClearText="Borrar" ClearTextColor="Black"
-                    SignatureLineColor="#000000" BackgroundColor="#FFFFFF">
+                    SignatureLineColor="#005494" BackgroundColor="#FFFFFF" StrokeColor="#005494">
             </controls:SignaturePadView>
         </ContentView>
 

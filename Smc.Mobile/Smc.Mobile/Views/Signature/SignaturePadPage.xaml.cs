@@ -16,6 +16,7 @@ namespace Smc.Mobile.Views.Signature
 
             SignaturePadPageViewModel model = (SignaturePadPageViewModel)this.BindingContext;
             model.GetImageStreamAsync = signatureView.GetImageStreamAsync;
+             
 
         }
       

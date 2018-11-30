@@ -20,8 +20,10 @@
             <Color x:Key="MediumGray">#BABCBF</Color>
             <Color x:Key="SteelGray">#6D6D70</Color>
             <Color x:Key="BrandColor">#394A76</Color>
-            <Color x:Key="BrandAccentColor">#051943</Color>
-            <Color x:Key="PrimarBackground">#202e46</Color>
+            <Color x:Key="BrandAccentColor">#35414f</Color>
+          <Color x:Key="ButtonsColor">#37c4d5</Color>
+
+          <Color x:Key="PrimarBackground">#202e46</Color>
             <Color x:Key="LightButtonBackgroundColor">#99a0aa</Color>
             <Color x:Key="LightAccentColor">#EAEAEC</Color>
             <Color x:Key="LightDefaultColor">#adb3bb</Color>
@@ -158,7 +160,7 @@
                 <Setter Property="BorderRadius" Value="5"/>
                 <Setter Property="BorderWidth" Value="1"/>
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
-                <Setter Property="BackgroundColor" Value="{StaticResource BrandAccentColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonsColor}"/>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="Margin" Value="0, 30, 0, 10"/>
