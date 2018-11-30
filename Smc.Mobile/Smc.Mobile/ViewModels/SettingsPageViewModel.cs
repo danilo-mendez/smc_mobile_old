@@ -1,4 +1,5 @@
 ﻿using Acr.Settings;
+using Acr.UserDialogs;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -14,11 +15,11 @@ namespace Smc.Mobile.ViewModels
 {
 	public class SettingsPageViewModel : ViewModelBase
     {
-        private IProxyClientApi proxyClient;
-        public SettingsPageViewModel(INavigationService navigationService, IBusyService busyService, IProxyClientApi proxyClient)
+        private IApiService apiService;
+        public SettingsPageViewModel(INavigationService navigationService, IBusyService busyService, IApiService apiService)
             : base(navigationService, busyService)
         {
-            this.proxyClient = proxyClient;
+            this.apiService = apiService;
             Title = "Setting";
 
             Url =  CrossSettings.Current.Get<String>("Url", ApiConstants.Baseurl);
@@ -59,16 +60,29 @@ namespace Smc.Mobile.ViewModels
         {
             get
             {
-                return new DelegateCommand( () =>
+                return new DelegateCommand(async () =>
                 {
                     try
                     {
-                        CrossSettings.Current.Set<String>("Url", Url);
-                        CrossSettings.Current.Set<String>("TabletName", TabletName);
-                        CrossSettings.Current.Set<bool>("UseForSignature", UseForSignature);
-                        CrossSettings.Current.Set<bool>("UseForRegister", UseForRegister);
 
-                        Acr.UserDialogs.UserDialogs.Instance.Toast("Configuracion grabada exitosamente");
+                        if (!String.IsNullOrEmpty(TabletName))
+                        {
+                            var registerResult = await apiService.Register(TabletName);
+                            if (registerResult.ResponseCode == ResponseCodes.Success)
+                            {
+                                CrossSettings.Current.Set<String>("Url", Url);
+                                CrossSettings.Current.Set<String>("TabletName", TabletName);
+                                CrossSettings.Current.Set<bool>("UseForSignature", UseForSignature);
+                                CrossSettings.Current.Set<bool>("UseForRegister", UseForRegister);
+
+                                await UserDialogs.Instance.AlertAsync("Informacion actualizada");
+                            }
+                            else
+                            {
+                                DisplayeAlert(registerResult.Message);
+                            }
+                        }
+
                     }
                     catch (Exception ex)
                     {
