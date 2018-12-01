@@ -5,6 +5,7 @@
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
               xmlns:local="clr-namespace:Smc.Mobile.Controls"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
@@ -25,17 +26,62 @@
         <FlexLayout FlexLayout.Grow="1" Margin="40 , 20, 20, 40">
 
             <ScrollView FlexLayout.Grow="1">
+          
+                <StackLayout  x:Name="grid">
 
-                <StackLayout>
-                    <!--<inputLayout:SfTextInputLayout Hint="Name"  BackgroundColor="White" ContainerBackgroundColor="White" >
-                        <Entry Text="" HorizontalOptions="FillAndExpand" />
+
+                  <syncfusion:SfPicker
+                           x:Name="picker"
+                           HeaderText="Select a Color"
+                           ItemsSource="{Binding YesNoOptionsList}"
+                           PickerHeight="260"
+                           PickerWidth="300"
+                           IsOpen="false"
+            />
+
+                  <StackLayout>
+                    <Label Text="INFORMACION PRINCIPAL" Style="{StaticResource SubTitleLabelStyle}"/>
+                    <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
+                  </StackLayout>
+                  
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition></RowDefinition>
+                      <RowDefinition></RowDefinition>
+                      <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <inputLayout:SfTextInputLayout Hint="Primer Nombre"  ContainerBackgroundColor="Transparent">
+                      <Entry Text=""  Style="{StaticResource EntryStyle}"/>
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout Hint="Segundo Nombre" ContainerBackgroundColor="Transparent" Grid.Column="1" >
+                      <Entry Text=""  Style="{StaticResource EntryStyle}" />
                     </inputLayout:SfTextInputLayout>
 
-                    <inputLayout:SfTextInputLayout Hint="Demo"  BackgroundColor="White" ContainerBackgroundColor="White" >
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="True" DataSource="{Binding GenderList}" HorizontalOptions="FillAndExpand"  ShowBorder="False" ></combobox:SfComboBox>
+
+                    <inputLayout:SfTextInputLayout Hint="Apellido Paterno"  ContainerBackgroundColor="Transparent" Grid.Row="1">
+                      <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout Hint="Apellido Materno" ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" >
+                      <Entry Text="" Style="{StaticResource EntryStyle}"  />
                     </inputLayout:SfTextInputLayout>
 
-                    <inputLayout:SfTextInputLayout Hint="Demo"  BackgroundColor="White" ContainerBackgroundColor="White" >
+                    <inputLayout:SfTextInputLayout Hint="Sexo"  ContainerBackgroundColor="Transparent" Grid.Row="2">
+                      <Entry Text=""  Style="{StaticResource EntryStyle}" x:Name="txtGender"/>
+                      <!--<inputLayout:SfTextInputLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="StartCall"
+                            NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                      </inputLayout:SfTextInputLayout.GestureRecognizers>-->
+                    </inputLayout:SfTextInputLayout>
+
+                  </Grid>
+            
+                    <!-- <inputLayout:SfTextInputLayout Hint="Demo"  BackgroundColor="White" ContainerBackgroundColor="White" >
                         <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding GenderList}"  HorizontalOptions="FillAndExpand" ShowBorder="False" ShowClearButton="True" ></combobox:SfComboBox>
                     </inputLayout:SfTextInputLayout>
 
@@ -48,10 +94,6 @@
                         <DatePicker  HorizontalOptions="FillAndExpand"  />
                     </inputLayout:SfTextInputLayout>-->
 
-                    <StackLayout>
-                        <Label Text="INFORMACION PRINCIPAL" Style="{StaticResource SubTitleLabelStyle}"/>
-                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
-                    </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Primer Nombre" Style="{StaticResource FormLabelStyle}"  ></Label>
                         <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>

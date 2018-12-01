@@ -1,4 +1,5 @@
 ﻿using Syncfusion.XForms.Buttons;
+using System;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -24,6 +25,32 @@ namespace Smc.Mobile.Views.Client
             //wizardNav.SelectionTextColor = Color.FromHex("#000000");
             //wizardNav.FontIconFontFamily = "materialdesignicons-webfont.ttf";
 
+            picker.PickerMode = Syncfusion.SfPicker.XForms.PickerMode.Dialog;
+            picker.SelectionChanged += Picker_SelectionChanged;
+
+
+            txtGender.Focused += (sender, e) =>
+            {
+
+                //remove the focus so that the next Tap-Event raises again after tapping.
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    txtGender.Unfocus();
+                    picker.IsOpen = true;
+
+                });
+
+            };
+        }
+
+        private void Picker_SelectionChanged(object sender, Syncfusion.SfPicker.XForms.SelectionChangedEventArgs e)
+        {
+            picker.IsOpen = false;
+        }
+
+        public void StartCall(object sender, EventArgs args)
+        {
+            picker.IsOpen = true;
         }
     }
 }
