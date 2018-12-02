@@ -7,6 +7,7 @@
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             xmlns:maskedit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
               xmlns:local="clr-namespace:Smc.Mobile.Controls"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
@@ -26,106 +27,58 @@
         <FlexLayout FlexLayout.Grow="1" Margin="40 , 20, 20, 40">
 
             <ScrollView FlexLayout.Grow="1">
-          
+
                 <StackLayout  x:Name="grid">
 
 
-                  <syncfusion:SfPicker
+                    <!--<syncfusion:SfPicker
                            x:Name="picker"
                            HeaderText="Select a Color"
                            ItemsSource="{Binding YesNoOptionsList}"
                            PickerHeight="260"
                            PickerWidth="300"
                            IsOpen="false"
-            />
+            />-->
 
-                  <StackLayout>
-                    <Label Text="INFORMACION PRINCIPAL" Style="{StaticResource SubTitleLabelStyle}"/>
-                    <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
-                  </StackLayout>
-                  
-                  <Grid>
-                    <Grid.RowDefinitions>
-                      <RowDefinition></RowDefinition>
-                      <RowDefinition></RowDefinition>
-                      <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                      <ColumnDefinition Width="*"/>
-                      <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <inputLayout:SfTextInputLayout Hint="Primer Nombre"  ContainerBackgroundColor="Transparent">
-                      <Entry Text=""  Style="{StaticResource EntryStyle}"/>
-                    </inputLayout:SfTextInputLayout>
-                    <inputLayout:SfTextInputLayout Hint="Segundo Nombre" ContainerBackgroundColor="Transparent" Grid.Column="1" >
-                      <Entry Text=""  Style="{StaticResource EntryStyle}" />
-                    </inputLayout:SfTextInputLayout>
-
-
-                    <inputLayout:SfTextInputLayout Hint="Apellido Paterno"  ContainerBackgroundColor="Transparent" Grid.Row="1">
-                      <Entry Text=""  Style="{StaticResource EntryStyle}" />
-                    </inputLayout:SfTextInputLayout>
-                    <inputLayout:SfTextInputLayout Hint="Apellido Materno" ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" >
-                      <Entry Text="" Style="{StaticResource EntryStyle}"  />
-                    </inputLayout:SfTextInputLayout>
-
-                    <inputLayout:SfTextInputLayout Hint="Sexo"  ContainerBackgroundColor="Transparent" Grid.Row="2">
-                      <Entry Text=""  Style="{StaticResource EntryStyle}" x:Name="txtGender"/>
-                      <!--<inputLayout:SfTextInputLayout.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Tapped="StartCall"
-                            NumberOfTapsRequired="1">
-                        </TapGestureRecognizer>
-                      </inputLayout:SfTextInputLayout.GestureRecognizers>-->
-                    </inputLayout:SfTextInputLayout>
-
-                  </Grid>
-            
-                    <!-- <inputLayout:SfTextInputLayout Hint="Demo"  BackgroundColor="White" ContainerBackgroundColor="White" >
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding GenderList}"  HorizontalOptions="FillAndExpand" ShowBorder="False" ShowClearButton="True" ></combobox:SfComboBox>
-                    </inputLayout:SfTextInputLayout>
-
-
-                    <inputLayout:SfTextInputLayout Hint="SfAutoComplete"   BackgroundColor="White" ContainerBackgroundColor="White" >
-                        <autocomplete:SfAutoComplete HeightRequest="40"  DataSource="{Binding GenderList}" HorizontalOptions="FillAndExpand"  ShowBorder="False" ShowClearButton="True"/>
-                    </inputLayout:SfTextInputLayout>
-
-                    <inputLayout:SfTextInputLayout Hint="Date"  BackgroundColor="White" ContainerBackgroundColor="White" >
-                        <DatePicker  HorizontalOptions="FillAndExpand"  />
-                    </inputLayout:SfTextInputLayout>-->
-
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Primer Nombre" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                    <StackLayout>
+                        <Label Text="INFORMACION PRINCIPAL" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Segundo Nombre" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <inputLayout:SfTextInputLayout Hint="Primer Nombre"  ContainerBackgroundColor="Transparent">
+                            <Entry Text=""  Style="{StaticResource EntryStyle}"/>
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Segundo Nombre" ContainerBackgroundColor="Transparent" Grid.Column="1" >
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        </inputLayout:SfTextInputLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Primer Apellido" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Segundo Apellido" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
+                        <inputLayout:SfTextInputLayout Hint="Apellido Paterno"  ContainerBackgroundColor="Transparent" Grid.Row="1">
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Apellido Materno" ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" >
+                            <Entry Text="" Style="{StaticResource EntryStyle}"  />
+                        </inputLayout:SfTextInputLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Fecha de nacimiento" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2018"  Date="06/21/2018"  HorizontalOptions="FillAndExpand"  />
-                    </StackLayout>
+                        <inputLayout:SfTextInputLayout Hint="Sexo"  ContainerBackgroundColor="Transparent" Grid.Row="2">
+                            <Picker ItemsSource="{Binding GenderList}" ></Picker>
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Fecha de nacimiento" ContainerBackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" >
+                            <maskedit:SfMaskedEdit Mask="00/00/0000"></maskedit:SfMaskedEdit>
+                        </inputLayout:SfTextInputLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Sexo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <buttons:SfRadioGroup Orientation="Horizontal" Margin="0, 20, 0, 0">
-                            <buttons:SfRadioButton Text="Femenino"  FontSize="{StaticResource LargeSize }"/>
-                            <buttons:SfRadioButton Text="Masculino"  FontSize="{StaticResource LargeSize }"/>
-                        </buttons:SfRadioGroup>
-                    </StackLayout>
+                    </Grid>
+
 
                     <StackLayout>
                         <Label Text="OTRA INFORMACION" Style="{StaticResource SubTitleLabelStyle}"/>
@@ -135,7 +88,7 @@
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Ciudadano Americano" Style="{StaticResource FormLabelStyle}"  ></Label>
-                            <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
