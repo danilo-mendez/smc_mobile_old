@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
-             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             xmlns:syncmaskededit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
+                   xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             xmlns:maskedit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
               xmlns:local="clr-namespace:Smc.Mobile.Controls"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
@@ -23,7 +26,7 @@
         <local:ProfileNavbar SelectedPage="3"  ></local:ProfileNavbar>
 
         <!-- Body -->
-        <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
+        <FlexLayout FlexLayout.Grow="1" Margin="10 , 10, 10, 10">
 
             <ScrollView FlexLayout.Grow="1">
 
@@ -34,53 +37,57 @@
                     </StackLayout>
 
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">
-                        <Label Text="Telefono y Tipo" Style="{StaticResource FormLabelStyle}"></Label>
-                        <StackLayout>
-                            <syncmaskededit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
-                            <syncfusion:SfRadioGroup Orientation="Horizontal">
-                                <syncfusion:SfRadioButton Text="Casa"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Celular"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Trabajo"  FontSize="{StaticResource MidMediumSize }"/>
-                                <syncfusion:SfRadioButton Text="Otro"  FontSize="{StaticResource MidMediumSize }"/>
-                            </syncfusion:SfRadioGroup>
-                        </StackLayout>
-                    </StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <inputLayout:SfTextInputLayout Hint="Teléfono"  ContainerBackgroundColor="Transparent">
+                            <maskedit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Tipo" ContainerBackgroundColor="Transparent" Grid.Column="1" >
+                            <Picker ItemsSource="{Binding PhoneTypeList}" ></Picker>
+                        </inputLayout:SfTextInputLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Correo Electrónico" Style="{StaticResource FormLabelStyle}"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
+                        <inputLayout:SfTextInputLayout Hint="Correo Electrónico"  ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.ColumnSpan="2">
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        </inputLayout:SfTextInputLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Forma Preferida Contacto" Style="{StaticResource FormLabelStyle}"></Label>
-                        <syncfusion:SfRadioGroup Orientation="Horizontal" Margin="0, 20, 0, 0">
-                            <syncfusion:SfRadioButton Text="Llamada"  FontSize="{StaticResource MidMediumSize }"/>
-                            <syncfusion:SfRadioButton Text="Mail"  FontSize="{StaticResource MidMediumSize }"/>
-                            <syncfusion:SfRadioButton Text="Email"  FontSize="{StaticResource MidMediumSize }"/>
-                            <syncfusion:SfRadioButton Text="Texto"  FontSize="{StaticResource MidMediumSize }"/>
-                        </syncfusion:SfRadioGroup>
-                    </StackLayout>
+                    </Grid>
 
                     <StackLayout>
-                        <Label Text="LICENCIA DE CONDUCIR" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <Label Text="OTRA INFORMACION" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
 
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <inputLayout:SfTextInputLayout Hint="Tiene Licencia"  ContainerBackgroundColor="Transparent">
+                            <Picker ItemsSource="{Binding YesNoOptionsList}" ></Picker>
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Tipo" ContainerBackgroundColor="Transparent" Grid.Column="1" >
+                            <Picker ItemsSource="{Binding LicenseCategoryList}" ></Picker>
+                        </inputLayout:SfTextInputLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">
-                        <Label Text="Tiene Licencia?" Style="{StaticResource FormLabelStyle}"></Label>
-                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"  Margin="0, 20, 0, 0" />
-                        <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding LicenseCategoryList}"  HorizontalOptions="FillAndExpand"   Margin="20, 0, 0, 0"></combobox:SfComboBox>
-                    </StackLayout>
+                        <inputLayout:SfTextInputLayout Hint="Nivel educacional más alto completado"  ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.ColumnSpan="2">
+                            <Picker ItemsSource="{Binding HighestEducationalLevelCompletedList}" ></Picker>
+                        </inputLayout:SfTextInputLayout>
 
-                  <StackLayout>
-                    <Label Text="NIVEL EDUCAciónAL MAS ALTO COMPLETADO" Style="{StaticResource SubTitleLabelStyle}"/>
-                    <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
-                  </StackLayout>
-                  <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0, 20, 0, 0">
-                    <combobox:SfComboBox HeightRequest="40"  IsEditableMode="false" DataSource="{Binding HighestEducationalLevelCompletedList}"  HorizontalOptions="FillAndExpand"   Margin="20, 0, 0, 0"></combobox:SfComboBox>
-                  </StackLayout>
+                    </Grid>
+
                 </StackLayout>
             </ScrollView>
         </FlexLayout>

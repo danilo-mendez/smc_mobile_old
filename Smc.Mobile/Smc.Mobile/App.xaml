@@ -118,7 +118,7 @@
                 <Setter Property="FontSize"
                     Value="{StaticResource MediumSize}" />
                 <Setter Property="Margin"
-                    Value="10, 30, 0, 0" />
+                    Value="10, 20, 0, 0" />
                 <Setter Property="Font"
                     Value="Bold" />
                 <Setter Property="TextColor"

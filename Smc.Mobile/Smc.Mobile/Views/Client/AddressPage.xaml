@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
               xmlns:local="clr-namespace:Smc.Mobile.Controls"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.AddressPage">
@@ -19,30 +20,35 @@
         <local:ProfileNavbar SelectedPage="2"  ></local:ProfileNavbar>
 
         <!-- Body -->
-        <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
+        <FlexLayout FlexLayout.Grow="1" Margin="10 , 10, 10, 10">
 
             <ScrollView FlexLayout.Grow="1">
 
                 <StackLayout>
                     <StackLayout>
-                        <Label Text="DIRECción FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <Label Text="DIRECCIÓN FISICA" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
+
+                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 1" ContainerBackgroundColor="Transparent" >
+                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                    </inputLayout:SfTextInputLayout>
+                    
+                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 2" ContainerBackgroundColor="Transparent" >
+                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                    </inputLayout:SfTextInputLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Zip/Pueblo/Estado" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding PhysicalAddressZipCode}"  ></Entry>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding PhysicalAddressCity}" ></Entry>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding PhysicalAddressState}"  ></Entry>
+                        <inputLayout:SfTextInputLayout Hint="Código Postal" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Ciudad" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Estado" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        </inputLayout:SfTextInputLayout>
                     </StackLayout>
 
 
@@ -54,24 +60,29 @@
                   </Button>
 
                     <StackLayout>
-                        <Label Text="DIRECCION POSTAL" Style="{StaticResource SubTitleLabelStyle}"/>
+                        <Label Text="DIRECCIÓN POSTAL" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Dirección Línea 1" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
+
+                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 1" ContainerBackgroundColor="Transparent" >
+                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 2" ContainerBackgroundColor="Transparent" >
+                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                    </inputLayout:SfTextInputLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Dirección Línea 2" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                      <Label Text="Zip/Pueblo/Estado" Style="{StaticResource FormLabelStyle}" WidthRequest="200"></Label>
-                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
-                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" ></Entry>
-                      <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"  ></Entry>
+                        <inputLayout:SfTextInputLayout Hint="Código Postal" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Ciudad" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout Hint="Estado" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
+                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        </inputLayout:SfTextInputLayout>
                     </StackLayout>
 
                 </StackLayout>

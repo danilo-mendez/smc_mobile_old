@@ -14,7 +14,7 @@ namespace Smc.Mobile.Controls
         {
             this.ItemsSource = new List<String>
             {
-                "Perfil", "Demografia", "Direccion", "Contacto"
+                "Perfil", "Demografía", "Dirección", "Contacto"
             };
 
             
@@ -22,6 +22,7 @@ namespace Smc.Mobile.Controls
             this.VisibleSegmentsCount = 4;
             this.BorderColor = Color.FromHex("#929292");
             this.FontColor = Color.FromHex("#929292");
+            this.FontSize = 20;
             this.SelectionTextColor = Color.FromHex("#87A3BA");
             this.Color = Color.Transparent;
             this.BackgroundColor = Color.Transparent;

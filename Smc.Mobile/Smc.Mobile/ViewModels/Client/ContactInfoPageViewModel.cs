@@ -18,10 +18,21 @@ namespace Smc.Mobile.ViewModels.Client
             PhoneTypeList = new List<string>();
             PhoneTypeList.AddRange(new string[] { "Casa", "Celular", "Trabajo", "Otro" });
 
+
+            PhoneTypeList.AddRange(new string[] { "Casa", "Celular", "Trabajo", "Otro" });
+
             LicenseCategoryList = new List<string>();
             LicenseCategoryList.AddRange(new string[] { "Aprendizaje", "Conductor", "Chofer" });
             LicenseCategoryList.AddRange(new string[] { "Vehiculo Pesado Tipo 1 (Cat 6)", "Vehiculo Pesado Tipo 2 (Cat 7)", "Vehiculo Pesado Tipo 3 (Cat 8)" });
             LicenseCategoryList.AddRange(new string[] { "Tractor o Remolcador (Cat 9)", "Motocicleta" });
+
+
+            YesNoOptionsList = new List<string>
+            {
+                "Si",
+                "No",
+                "Participante no se identifica"
+            };
 
             HighestEducationalLevelCompletedList = new List<string>();
             HighestEducationalLevelCompletedList.AddRange(new string[] { "No Educational Level Completed", "Attained secondary school diploma", "Attained a secondary school equivalency" });
@@ -42,6 +53,10 @@ namespace Smc.Mobile.ViewModels.Client
             get; set;
         }
         public List<String> HighestEducationalLevelCompletedList
+        {
+            get; set;
+        }
+        public List<String> YesNoOptionsList
         {
             get; set;
         }

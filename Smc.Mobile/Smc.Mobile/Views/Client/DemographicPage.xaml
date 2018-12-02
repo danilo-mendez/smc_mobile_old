@@ -21,7 +21,7 @@
         <local:ProfileNavbar SelectedPage="1"  ></local:ProfileNavbar>
 
         <!-- Body -->
-        <FlexLayout FlexLayout.Grow="1" Margin="20 , 20, 20, 20">
+        <FlexLayout FlexLayout.Grow="1" Margin="10 , 10, 10, 10">
 
             <ScrollView FlexLayout.Grow="1">
 

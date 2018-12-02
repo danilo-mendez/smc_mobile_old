@@ -30,16 +30,6 @@
 
                 <StackLayout  x:Name="grid">
 
-
-                    <!--<syncfusion:SfPicker
-                           x:Name="picker"
-                           HeaderText="Select a Color"
-                           ItemsSource="{Binding YesNoOptionsList}"
-                           PickerHeight="260"
-                           PickerWidth="300"
-                           IsOpen="false"
-            />-->
-
                     <StackLayout>
                         <Label Text="INFORMACION PRINCIPAL" Style="{StaticResource SubTitleLabelStyle}"/>
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
