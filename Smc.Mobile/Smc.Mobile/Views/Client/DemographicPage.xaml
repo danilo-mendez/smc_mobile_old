@@ -32,7 +32,7 @@
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Hispano o Latino" Style="{StaticResource FormLabelStyle}"  WidthRequest="400" ></Label>
-                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }" IsChecked="{Binding EthnicityHispanicLatino}"  />
                     </StackLayout>
 
                  
@@ -45,25 +45,25 @@
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Blanco" Style="{StaticResource FormLabelStyle}" WidthRequest="400" ></Label>
-                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   IsChecked="{Binding White}"  />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Indio Nativo Americano o de Alaska" Style="{StaticResource FormLabelStyle}" WidthRequest="400"  ></Label>
-                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   IsChecked="{Binding AmericanIndianAlaskaNative}"  />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Asiatico" Style="{StaticResource FormLabelStyle}"  WidthRequest="400" ></Label>
-                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"    IsChecked="{Binding Asian}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Afromaericano" Style="{StaticResource FormLabelStyle}" WidthRequest="400"  ></Label>
-                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"    IsChecked="{Binding BlackAfricanAmerican}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Nativo de Hawaii o de las islas del pacifico" Style="{StaticResource FormLabelStyle}" WidthRequest="400"  ></Label>
-                      <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
+                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   IsChecked="{Binding NativeHawaiianOtherPacificIslander}"  />
                     </StackLayout>
 
                 </StackLayout>

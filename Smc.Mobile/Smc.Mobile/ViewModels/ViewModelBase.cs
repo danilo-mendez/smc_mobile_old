@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using Smc.Mobile.Api;
 using SMC.Mobile.Infrastructure;
 using System;
@@ -20,6 +21,7 @@ namespace Smc.Mobile.ViewModels
         /// <value>The navigation service.</value>
         public INavigationService NavigationService { get; }
         protected IBusyService BusyService { get; }
+
 
         DelegateCommand<string> _navigateAbsoluteCommand;
         DelegateCommand<string> _navigateCommand;
@@ -70,7 +72,7 @@ namespace Smc.Mobile.ViewModels
             this.BusyService = busyService;
         }
 
-
+    
 
         /// <summary>
         /// Determines whether this instance accepts being navigated away from.  This method is invoked by Prism before a navigation operation and is a member of IConfirmNavigation.

@@ -100,7 +100,7 @@ namespace Smc.Mobile.ViewModels
                                     }
                                     else
                                     {
-                                        DisplayeAlert(registerResult.Message);
+                                       DisplayeAlert(registerResult.Message);
                                     }
                                 }
 

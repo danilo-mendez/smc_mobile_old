@@ -41,21 +41,20 @@
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <inputLayout:SfTextInputLayout Hint="Teléfono"  ContainerBackgroundColor="Transparent">
-                            <maskedit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" WidthRequest="200"/>
+                            <maskedit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" Value="{Binding Telephone1}"/>
                         </inputLayout:SfTextInputLayout>
                         <inputLayout:SfTextInputLayout Hint="Tipo" ContainerBackgroundColor="Transparent" Grid.Column="1" >
-                            <Picker ItemsSource="{Binding PhoneTypeList}" ></Picker>
+                            <Picker ItemsSource="{Binding PhoneTypeList}"  ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding TelephoneType1, Mode=TwoWay}" ></Picker>
                         </inputLayout:SfTextInputLayout>
 
                         <inputLayout:SfTextInputLayout Hint="Correo Electrónico"  ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.ColumnSpan="2">
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                            <Entry Text="{Binding  Email}"  Style="{StaticResource EntryStyle}" />
                         </inputLayout:SfTextInputLayout>
 
                     </Grid>
@@ -69,21 +68,20 @@
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <inputLayout:SfTextInputLayout Hint="Tiene Licencia"  ContainerBackgroundColor="Transparent">
-                            <Picker ItemsSource="{Binding YesNoOptionsList}" ></Picker>
+                        <inputLayout:SfTextInputLayout Hint="Tiene Licencia de conducir"  ContainerBackgroundColor="Transparent">
+                            <Picker ItemsSource="{Binding YesNoNotIdentifyList}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding DriverLicense, Mode=TwoWay}" ></Picker>
                         </inputLayout:SfTextInputLayout>
                         <inputLayout:SfTextInputLayout Hint="Tipo" ContainerBackgroundColor="Transparent" Grid.Column="1" >
-                            <Picker ItemsSource="{Binding LicenseCategoryList}" ></Picker>
+                            <Picker ItemsSource="{Binding LicenseCategoryList}"  ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding DriverLicenseCategory, Mode=TwoWay}" ></Picker>
                         </inputLayout:SfTextInputLayout>
 
                         <inputLayout:SfTextInputLayout Hint="Nivel educacional más alto completado"  ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.ColumnSpan="2">
-                            <Picker ItemsSource="{Binding HighestEducationalLevelCompletedList}" ></Picker>
+                            <Picker ItemsSource="{Binding HighestEducationalLevelCompletedList}" SelectedItem="{Binding HighestEducationalLevelCompleted, Mode=TwoWay}" ></Picker>
                         </inputLayout:SfTextInputLayout>
 
                     </Grid>

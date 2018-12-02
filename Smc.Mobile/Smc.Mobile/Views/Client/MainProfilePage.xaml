@@ -45,26 +45,27 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <inputLayout:SfTextInputLayout Hint="Primer Nombre"  ContainerBackgroundColor="Transparent">
-                            <Entry Text=""  Style="{StaticResource EntryStyle}"/>
+                        <inputLayout:SfTextInputLayout Hint="Primer Nombre"  ContainerBackgroundColor="Transparent"  HelperText="Requerido *">
+                            <Entry Text="{Binding FirstName}"  Style="{StaticResource EntryStyle}"/>
                         </inputLayout:SfTextInputLayout>
                         <inputLayout:SfTextInputLayout Hint="Segundo Nombre" ContainerBackgroundColor="Transparent" Grid.Column="1" >
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                            <Entry Text="{Binding SecondName}"  Style="{StaticResource EntryStyle}" />
                         </inputLayout:SfTextInputLayout>
 
 
-                        <inputLayout:SfTextInputLayout Hint="Apellido Paterno"  ContainerBackgroundColor="Transparent" Grid.Row="1">
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        <inputLayout:SfTextInputLayout Hint="Apellido Paterno"  ContainerBackgroundColor="Transparent" Grid.Row="1" HelperText="Requerido *">
+                            <Entry Text="{Binding LastName}"  Style="{StaticResource EntryStyle}" />
                         </inputLayout:SfTextInputLayout>
                         <inputLayout:SfTextInputLayout Hint="Apellido Materno" ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" >
-                            <Entry Text="" Style="{StaticResource EntryStyle}"  />
+                            <Entry Text="{Binding SecondLastName}" Style="{StaticResource EntryStyle}"  />
                         </inputLayout:SfTextInputLayout>
 
-                        <inputLayout:SfTextInputLayout Hint="Sexo"  ContainerBackgroundColor="Transparent" Grid.Row="2">
-                            <Picker ItemsSource="{Binding GenderList}" ></Picker>
+                        <inputLayout:SfTextInputLayout Hint="Sexo"  ContainerBackgroundColor="Transparent" Grid.Row="2" HelperText="Requerido *">
+                            <Picker ItemsSource="{Binding GenderList}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding Gender, Mode=TwoWay}" ></Picker>
                         </inputLayout:SfTextInputLayout>
-                        <inputLayout:SfTextInputLayout Hint="Fecha de nacimiento" ContainerBackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" >
-                            <maskedit:SfMaskedEdit Mask="00/00/0000"></maskedit:SfMaskedEdit>
+
+                        <inputLayout:SfTextInputLayout Hint="Fecha de nacimiento" ContainerBackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" HelperText="Requerido *">
+                            <maskedit:SfMaskedEdit Mask="00/00/0000" Value="{Binding Dob}"></maskedit:SfMaskedEdit>
                         </inputLayout:SfTextInputLayout>
 
                     </Grid>
@@ -75,18 +76,16 @@
                         <BoxView Style="{StaticResource BoxViewSubtitleStyle}" />
                     </StackLayout>
 
+                    <inputLayout:SfTextInputLayout Hint="Ciudadano Americano " ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" HelperText="Requerido *">
+                        <Picker ItemsSource="{Binding YesNoNotIdentifyList}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding Citizen, Mode=TwoWay}" ></Picker>
+                    </inputLayout:SfTextInputLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Ciudadano Americano" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
-                    </StackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label Text="Servicio Selectivo" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <buttons:SfRadioGroup Orientation="Horizontal" Margin="0, 20, 0, 0">
-                            <buttons:SfCheckBox  FontSize="{StaticResource LargeSize }"   />
-                        </buttons:SfRadioGroup>
-                    </StackLayout>
+                    <inputLayout:SfTextInputLayout Hint="Servicio Selectivo " ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" HelperText="Requerido *">
+                        <Picker ItemsSource="{Binding YesNoNotIdentifyList}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectiveService, Mode=TwoWay}" ></Picker>
+                    </inputLayout:SfTextInputLayout>
+
+            
                 </StackLayout>
             </ScrollView>
         </FlexLayout>

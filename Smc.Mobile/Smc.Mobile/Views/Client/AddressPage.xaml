@@ -31,32 +31,32 @@
                     </StackLayout>
 
 
-                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 1" ContainerBackgroundColor="Transparent" >
-                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 1" ContainerBackgroundColor="Transparent"  HelperText="Requerido *">
+                        <Entry Text="{Binding PhysicalAddressLine1}"  Style="{StaticResource EntryStyle}" />
                     </inputLayout:SfTextInputLayout>
                     
                     <inputLayout:SfTextInputLayout Hint="Dirección Línea 2" ContainerBackgroundColor="Transparent" >
-                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        <Entry Text="{Binding PhysicalAddressLine2}"  Style="{StaticResource EntryStyle}" />
                     </inputLayout:SfTextInputLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <inputLayout:SfTextInputLayout Hint="Código Postal" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        <inputLayout:SfTextInputLayout Hint="Código Postal" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand"  HelperText="Requerido *">
+                            <Entry Text="{Binding PhysicalAddressZipCode}"  Style="{StaticResource EntryStyle}" />
                         </inputLayout:SfTextInputLayout>
-                        <inputLayout:SfTextInputLayout Hint="Ciudad" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        <inputLayout:SfTextInputLayout Hint="Ciudad" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" IsEnabled="false">
+                            <Entry Text="{Binding PhysicalAddressCity}"  Style="{StaticResource EntryStyle}" IsEnabled="False" />
                         </inputLayout:SfTextInputLayout>
-                        <inputLayout:SfTextInputLayout Hint="Estado" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        <inputLayout:SfTextInputLayout Hint="Estado" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" IsEnabled="false" >
+                            <Entry Text="{Binding PhysicalAddressState}"  Style="{StaticResource EntryStyle}" IsEnabled="False" />
                         </inputLayout:SfTextInputLayout>
                     </StackLayout>
 
 
                   <Button BackgroundColor="{StaticResource LightAccentColor}"
                      HorizontalOptions="Center"
-                        Margin="0, 30, 0, 30"
-                     Command="{Binding SaveAndContinueCommand}"
-                     Text="Copiar dirección" >
+                        Margin="0, 10, 0, 10"
+                         Command="{Binding CopyAddressCommand}"
+                         Text="Copiar dirección" >
                   </Button>
 
                     <StackLayout>
@@ -65,23 +65,23 @@
                     </StackLayout>
 
 
-                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 1" ContainerBackgroundColor="Transparent" >
-                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                    <inputLayout:SfTextInputLayout Hint="Dirección Línea 1" ContainerBackgroundColor="Transparent"  HelperText="Requerido *">
+                        <Entry Text="{Binding PostalAddressLine1}"  Style="{StaticResource EntryStyle}" />
                     </inputLayout:SfTextInputLayout>
 
                     <inputLayout:SfTextInputLayout Hint="Dirección Línea 2" ContainerBackgroundColor="Transparent" >
-                        <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        <Entry Text="{Binding PostalAddressLine2}"  Style="{StaticResource EntryStyle}" />
                     </inputLayout:SfTextInputLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <inputLayout:SfTextInputLayout Hint="Código Postal" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" />
+                        <inputLayout:SfTextInputLayout Hint="Código Postal" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand"  HelperText="Requerido *">
+                            <Entry Text="{Binding PostalAddressZipCode}"  Style="{StaticResource EntryStyle}" />
                         </inputLayout:SfTextInputLayout>
-                        <inputLayout:SfTextInputLayout Hint="Ciudad" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        <inputLayout:SfTextInputLayout Hint="Ciudad" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" IsEnabled="false">
+                            <Entry Text="{Binding PostalAddressCity}"  Style="{StaticResource EntryStyle}" IsEnabled="False" />
                         </inputLayout:SfTextInputLayout>
-                        <inputLayout:SfTextInputLayout Hint="Estado" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" >
-                            <Entry Text=""  Style="{StaticResource EntryStyle}" IsEnabled="False" />
+                        <inputLayout:SfTextInputLayout Hint="Estado" ContainerBackgroundColor="Transparent"  HorizontalOptions="FillAndExpand" IsEnabled="false" >
+                            <Entry Text="{Binding PostalAddressState}"  Style="{StaticResource EntryStyle}" IsEnabled="False" />
                         </inputLayout:SfTextInputLayout>
                     </StackLayout>
 
