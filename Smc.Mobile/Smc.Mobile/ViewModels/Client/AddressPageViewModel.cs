@@ -170,14 +170,21 @@ namespace Smc.Mobile.ViewModels.Client
             {
                 return new DelegateCommand(async () =>
                 {
-
-                    LoadClientModel();
-                    NavigationParameters parameters = new NavigationParameters
+                    string vaidationMessage = Validate();
+                    if (String.IsNullOrEmpty(vaidationMessage))
                     {
-                        { "clientModel", ClientModel }
-                    };
+                        LoadClientModel();
+                        NavigationParameters parameters = new NavigationParameters
+                        {
+                            { "clientModel", ClientModel }
+                        };
 
-                    await this.NavigationService.NavigateAsync("ContactInfoPage", null, false);
+                        await this.NavigationService.NavigateAsync("ContactInfoPage", null, false);
+                    }
+                    else
+                    {
+                        await this.pageDialogService.DisplayAlertAsync("Alerta", vaidationMessage, "OK");
+                    }
 
                 });
             }
@@ -248,6 +255,31 @@ namespace Smc.Mobile.ViewModels.Client
             ClientModel.PostalAddressState = this.PostalAddressState;
             ClientModel.PostalAddressCity = this.PostalAddressCity;
 
+        }
+
+        private string Validate()
+        {
+            string message = null;
+
+            if (String.IsNullOrEmpty(this.PhysicalAddressLine1))
+            {
+                message = "Dirección Física Linea 1 es requerida";
+            }
+            else if (String.IsNullOrEmpty(this.PhysicalAddressZipCode))
+            {
+                message = "Codigo Postal Dirección Física es requerido";
+            }
+            else if (String.IsNullOrEmpty(this.PostalAddressLine1))
+            {
+                message = "Dirección Postal Linea 1 es requerida";
+            }
+            else if (String.IsNullOrEmpty(this.PostalAddressZipCode))
+            {
+                message = "Codigo Postal Dirección Postal es requerido";
+            }
+
+
+            return message;
         }
     }
 }

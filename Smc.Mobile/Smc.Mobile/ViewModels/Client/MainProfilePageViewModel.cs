@@ -86,29 +86,37 @@ namespace Smc.Mobile.ViewModels.Client
             {
                 return new DelegateCommand(async () =>
                 {
-               
-                    ClientModel.FirstName = this.FirstName;
-                    ClientModel.SecondName = this.SecondName;
-                    ClientModel.LastName = this.LastName;
-                    ClientModel.SecondLastName = this.SecondLastName;
+                    string vaidationMessage = Validate();
 
-                    DateTime date;
-                    if (DateTime.TryParse(this.Dob, out date))
+                    if (String.IsNullOrEmpty(vaidationMessage))
                     {
-                        ClientModel.DateofBirth = date;
+                        ClientModel.FirstName = this.FirstName;
+                        ClientModel.SecondName = this.SecondName;
+                        ClientModel.LastName = this.LastName;
+                        ClientModel.SecondLastName = this.SecondLastName;
+
+                        DateTime date;
+                        if (DateTime.TryParse(this.Dob, out date))
+                        {
+                            ClientModel.DateofBirth = date;
+                        }
+
+                        ClientModel.Sex = this.Gender != null ? this.Gender.Id : new Nullable<int>();
+                        ClientModel.Citizen = this.Citizen != null ? this.Citizen.Id : new Nullable<int>();
+                        ClientModel.SelectiveService = this.SelectiveService != null ? this.SelectiveService.Id : new Nullable<int>();
+
+                        NavigationParameters parameters = new NavigationParameters
+                        {
+                            { "clientModel", ClientModel }
+                        };
+
+
+                        await this.NavigationService.NavigateAsync("DemographicPage", parameters, false);
                     }
-
-                    ClientModel.Sex = this.Gender != null ? this.Gender.Id : new Nullable<int>();
-                    ClientModel.Citizen = this.Citizen != null ? this.Citizen.Id : new Nullable<int>();
-                    ClientModel.SelectiveService = this.SelectiveService != null ? this.SelectiveService.Id : new Nullable<int>();
-
-                    NavigationParameters parameters = new NavigationParameters
+                    else
                     {
-                        { "clientModel", ClientModel }
-                    };
-
-
-                    await this.NavigationService.NavigateAsync("DemographicPage", parameters, false);
+                        await this.pageDialogService.DisplayAlertAsync("Alerta", vaidationMessage, "OK");
+                    }
 
                 });
             }
@@ -147,6 +155,30 @@ namespace Smc.Mobile.ViewModels.Client
             }
         }
 
+        private string Validate()
+        {
+            string message = null;
+
+            if (String.IsNullOrEmpty(this.FirstName))
+            {
+                message = "Primer Nombre es requerido";
+            }
+            else if (String.IsNullOrEmpty(this.LastName))
+            {
+                message = "Apellido Paterno es requerido";
+            }
+            else if (String.IsNullOrEmpty(this.Dob))
+            {
+                message = "Fecha Nacimiento es requerido";
+            }
+            else if (this.Gender == null)
+            {
+                message = "Sexo es requerido";
+            }
+
+          
+            return message;
+        }
   
     }
 }
