@@ -1,6 +1,7 @@
 ﻿using Acr.Settings;
 using Prism;
 using Prism.Ioc;
+using Prism.Plugin.Popups;
 using Smc.Mobile.Api;
 using Smc.Mobile.ViewModels;
 using Smc.Mobile.ViewModels.Client;
@@ -42,12 +43,17 @@ namespace Smc.Mobile
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<CreateClientNavigationPage>();
 
-            string baseurl = CrossSettings.Current.Get<string>("Url", ApiConstants.Baseurl);
-
+            containerRegistry.RegisterPopupNavigationService();
 
             containerRegistry.Register<IBusyService, BusyService>();
             containerRegistry.Register<IApiService, ApiService>();
+
+#if DEBUG
+            containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(ApiConstants.Baseurl));
+#else
+            string baseurl = CrossSettings.Current.Get<string>("Url", ApiConstants.Baseurl);
             containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(baseurl));
+#endif
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();
@@ -58,6 +64,7 @@ namespace Smc.Mobile
             containerRegistry.RegisterForNavigation<WelcomePage, WelcomePageViewModel>();
             containerRegistry.RegisterForNavigation<SignaturePadPage, SignaturePadPageViewModel>();
             containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
+            containerRegistry.RegisterForNavigation<CredentialsPage, CredentialsPageViewModel>();
         }
     }
 }

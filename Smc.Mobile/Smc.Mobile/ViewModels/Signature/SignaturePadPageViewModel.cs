@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using SignaturePad.Forms;
 using Smc.Mobile.Api;
 using Smc.Mobile.Api.Dto;
@@ -18,12 +19,14 @@ namespace Smc.Mobile.ViewModels
 	public class SignaturePadPageViewModel : ViewModelBase
     {
         private IApiService apiService;
+        protected IPageDialogService pageDialogService;
 
-        public SignaturePadPageViewModel(INavigationService navigationService, IBusyService busyService, IApiService apiService)
+        public SignaturePadPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService, IApiService apiService)
             : base(navigationService, busyService)
         {
             this.apiService = apiService;
-      
+            this.pageDialogService = pageDialogService;
+
         }
 
 
@@ -66,7 +69,9 @@ namespace Smc.Mobile.ViewModels
                                         }
                                         else
                                         {
-                                            DisplayeAlert(postSignature.Message);
+
+                                            await this.pageDialogService.DisplayAlertAsync("Alerta", postSignature.Message, "OK");
+
                                         } 
                                     }
 

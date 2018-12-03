@@ -6,8 +6,11 @@ namespace Smc.Mobile.Api
 {
     public class ApiConstants
     {
-        //public static readonly string Baseurl = "http://192.168.1.26/apipublic/";
+#if DEBUG
+        public static readonly string Baseurl = "http://192.168.1.26/apipublic/";
+#else
         public static readonly string Baseurl = "https://smc.dyteks.com/apipublic/";
+#endif
         // public static readonly string AuthHeaderName = "Authorization";
 
         public const string ZipCode = @"zipcode?zip=";
@@ -15,6 +18,9 @@ namespace Smc.Mobile.Api
         public const string RegisterTablet = @"RegisterTablet";
         public const string Sign = @"Sign?internalId=";
         public const string GetSignatureInfo = @"GetSignatureInfo?internalId=";
+
+
+        public const string GetClient = @"GetClient?ssn=";
 
     }
 }

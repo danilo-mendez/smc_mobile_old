@@ -3,6 +3,8 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
+using Smc.Mobile.Api;
+using Smc.Mobile.Api.Dto;
 using Smc.Mobile.Model;
 using SMC.Mobile.Infrastructure;
 using System;
@@ -12,16 +14,13 @@ using Xamarin.Forms;
 
 namespace Smc.Mobile.ViewModels.Client
 {
-	public class StartPageViewModel : ViewModelBase
+	public class StartPageViewModel : BaseClientViewModel
     {
 
-        private IPageDialogService pageDialogService;
-
-        public StartPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService)
-       : base(navigationService, busyService)
+        public StartPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService, IProxyClientApi proxyClient)
+               : base(navigationService, busyService, pageDialogService, proxyClient)
         {
             Title = "Bienvenido";
-            this.pageDialogService = pageDialogService;
         }
 
   
@@ -64,6 +63,18 @@ namespace Smc.Mobile.ViewModels.Client
                                 string ssn = $"{SSN1}-{SSN2}-{SSN3}";
                                 if (ssn != null && ssn.Length == 11)
                                 {
+
+                                    var result = await proxyClient.GetRequestAsync<ClientDto>($"{ApiConstants.ZipCode}{ssn}");
+
+                                    if (result != null && result.Ack == AckCode.Success)
+                                    {
+                                        if (result.Data != null)
+                                        {
+                                            //PhysicalAddressCity = result.Data.City;
+                                            //PhysicalAddressState = result.Data.State;
+                                        }
+                                    }
+
                                     var clientModel = new ClientModel();
                                     clientModel.ClientSSN = ssn;
 
@@ -93,3 +104,4 @@ namespace Smc.Mobile.ViewModels.Client
         }
     }
 }
+

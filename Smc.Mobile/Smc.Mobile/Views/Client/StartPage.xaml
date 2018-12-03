@@ -6,7 +6,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.StartPage">
   <ContentPage.ToolbarItems>
-    <ToolbarItem  Order="Primary" Icon="ico_exit.png" Priority="1"   Command="{Binding Path=NavigateCommand}"   />
+        <ToolbarItem  Order="Primary" Icon="ico_exit.png" Priority="1"   Command="{Binding Path=NavigateCommand}"  CommandParameter="/CreateClientNavigationPage/WelcomePage"  />
   </ContentPage.ToolbarItems>
     <NavigationPage.TitleView>
         <StackLayout>

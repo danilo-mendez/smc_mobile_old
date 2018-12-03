@@ -3,6 +3,7 @@ using Acr.UserDialogs;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using Smc.Mobile.Api;
 using SMC.Mobile.Infrastructure;
 using System;
@@ -16,10 +17,14 @@ namespace Smc.Mobile.ViewModels
     public class MainPageViewModel : ViewModelBase
     {
         private IApiService apiService;
-        public MainPageViewModel(INavigationService navigationService, IBusyService busyService, IApiService apiService)
+        protected IPageDialogService pageDialogService;
+
+        public MainPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService, IApiService apiService)
             : base(navigationService, busyService)
         {
             this.apiService = apiService;
+            this.pageDialogService = pageDialogService;
+
             Title = "Bienvenido SMC Mobile";
 
             LoadData();
@@ -66,9 +71,10 @@ namespace Smc.Mobile.ViewModels
 
                         bool initialized = false;
 
+
                         if (result.ResponseCode != ResponseCodes.Success)
                         {
-                           // DisplayeAlert("La tableta no ha sido inicializada");
+                            await this.pageDialogService.DisplayAlertAsync("Alerta", "La tableta no ha sido inicializada", "OK");
                         }
                         else
                         {
@@ -88,6 +94,8 @@ namespace Smc.Mobile.ViewModels
                                 Message = "Ingrese codigo tableta"
                             };
 
+                            //var action = await pageDialogService.DisplayActionSheetAsync("ActionSheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
+
                             var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
                             if (dialogResult.Ok)
                             {
@@ -96,11 +104,12 @@ namespace Smc.Mobile.ViewModels
                                     var registerResult = await apiService.Register(dialogResult.Text);
                                     if (registerResult.ResponseCode == ResponseCodes.Success)
                                     {
-                                        await UserDialogs.Instance.AlertAsync("Tableta Registrada exitosamente");
+
+                                        await this.pageDialogService.DisplayAlertAsync("Alerta", "Tableta Registrada exitosamente", "OK");
                                     }
                                     else
                                     {
-                                       DisplayeAlert(registerResult.Message);
+                                        await this.pageDialogService.DisplayAlertAsync("Error", registerResult.Message, "OK");
                                     }
                                 }
 
@@ -148,7 +157,7 @@ namespace Smc.Mobile.ViewModels
                         }
                         else
                         {
-                            DisplayeAlert("No existe reporte pendiente para esta tablet");
+                            await this.pageDialogService.DisplayAlertAsync("Alerta", "No existe reporte pendiente para esta tablet", "OK");
                         }
                     }
                     catch (Exception ex)
@@ -167,28 +176,30 @@ namespace Smc.Mobile.ViewModels
             {
                 return new DelegateCommand(async () =>
                 {
-                    var promptConfig = new PromptConfig
-                    {
-                        InputType = InputType.NumericPassword,
-                        IsCancellable = false,
-                        Message = "Ingrese clave"
-                    };
 
-                    var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
-                    if (dialogResult.Ok)
-                    {
-                        if (!String.IsNullOrEmpty(dialogResult.Text) && dialogResult.Text == "8521")
-                        {
-                            await this.NavigationService.NavigateAsync("SettingsPage", null, false);
-                        }
-                        else
-                        {
-                            await UserDialogs.Instance.AlertAsync("Clave invalida");
-                        }
+                    NavigationService.PushPopupAsync()
+                    //var promptConfig = new PromptConfig
+                    //{
+                    //    InputType = InputType.NumericPassword,
+                    //    IsCancellable = false,
+                    //    Message = "Ingrese clave"
+                    //};
 
-                    }
+                    //var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
+                    //if (dialogResult.Ok)
+                    //{
+                    //    if (!String.IsNullOrEmpty(dialogResult.Text) && dialogResult.Text == "8521")
+                    //    {
+                    //        await this.NavigationService.NavigateAsync("SettingsPage", null, false);
+                    //    }
+                    //    else
+                    //    {
+                    //        await this.pageDialogService.DisplayAlertAsync("Alerta", "Clave Invalida", "OK");
+                    //    }
 
-               
+                    //}
+                    await this.NavigationService.NavigateAsync("CredentialsPage", null, false);
+
 
                 });
             }

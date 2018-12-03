@@ -3,6 +3,7 @@ using Acr.UserDialogs;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using Smc.Mobile.Api;
 using Smc.Mobile.Api.Dto;
 using SMC.Mobile.Infrastructure;
@@ -16,10 +17,13 @@ namespace Smc.Mobile.ViewModels
 	public class SettingsPageViewModel : ViewModelBase
     {
         private IApiService apiService;
-        public SettingsPageViewModel(INavigationService navigationService, IBusyService busyService, IApiService apiService)
+        protected IPageDialogService pageDialogService;
+        public SettingsPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService, IApiService apiService)
             : base(navigationService, busyService)
         {
             this.apiService = apiService;
+            this.pageDialogService = pageDialogService;
+
             Title = "Setting";
 
             Url =  CrossSettings.Current.Get<String>("Url", ApiConstants.Baseurl);
@@ -75,11 +79,12 @@ namespace Smc.Mobile.ViewModels
                                 CrossSettings.Current.Set<bool>("UseForSignature", UseForSignature);
                                 CrossSettings.Current.Set<bool>("UseForRegister", UseForRegister);
 
-                                await UserDialogs.Instance.AlertAsync("Informacion actualizada");
+                                await this.pageDialogService.DisplayAlertAsync("Alerta", "Informacion actualizada", "OK");
                             }
                             else
                             {
-                                DisplayeAlert(registerResult.Message);
+
+                                await this.pageDialogService.DisplayAlertAsync("Alerta", registerResult.Message, "OK");
                             }
                         }
 

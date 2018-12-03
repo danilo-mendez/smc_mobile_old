@@ -237,12 +237,7 @@ namespace Smc.Mobile.ViewModels
             get => _title;
             set => SetProperty(ref _title, value);
         }
-
-        protected async void DisplayeAlert(String message)
-        {
-            await UserDialogs.Instance.AlertAsync(message);
-        }
-
+ 
         protected async void HandleException(Exception ex)
         {
             if (ex is ApiException)
