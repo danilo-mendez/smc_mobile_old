@@ -21,6 +21,7 @@ namespace Smc.Mobile.Api
 
 
         public const string GetClient = @"GetClient?ssn=";
+        public const string AddClient = @"AddClient";
 
     }
 }

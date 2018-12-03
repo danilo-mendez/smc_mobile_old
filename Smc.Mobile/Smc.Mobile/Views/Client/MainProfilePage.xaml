@@ -67,8 +67,8 @@
                             <Picker ItemsSource="{Binding GenderList}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding Gender, Mode=TwoWay}" ></Picker>
                         </inputLayout:SfTextInputLayout>
 
-                        <inputLayout:SfTextInputLayout Hint="Fecha de nacimiento" ContainerBackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" HelperText="Requerido *">
-                            <maskedit:SfMaskedEdit Mask="00/00/0000" Value="{Binding Dob}"></maskedit:SfMaskedEdit>
+                        <inputLayout:SfTextInputLayout Hint="Fecha de nacimiento (MM/DD/YYYY)" ContainerBackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" HelperText="Requerido *">
+                            <maskedit:SfMaskedEdit Mask="00/00/0000" Value="{Binding Dob}" Keyboard="Numeric"></maskedit:SfMaskedEdit>
                         </inputLayout:SfTextInputLayout>
 
                     </Grid>

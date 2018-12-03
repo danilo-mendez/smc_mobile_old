@@ -135,7 +135,12 @@ namespace Smc.Mobile.ViewModels.Client
 
                 if (ClientModel.DateofBirth.HasValue)
                 {
-                    this.Dob = ClientModel.DateofBirth.Value.ToShortDateString();
+                    var date = ClientModel.DateofBirth.Value;
+
+                    var day = date.Day > 9 ? date.Day.ToString() : "0" + date.Day.ToString();
+                    var month = date.Month > 9 ? date.Month.ToString() : "0" + date.Month.ToString();
+
+                    this.Dob = $"{month}/{day}/{date.Year}";
                 }
 
                 if (ClientModel.Sex.HasValue)
@@ -175,8 +180,12 @@ namespace Smc.Mobile.ViewModels.Client
             {
                 message = "Sexo es requerido";
             }
+            DateTime date;
+            if (!DateTime.TryParse(this.Dob, out date))
+            {
+                message = "Fecha de nacimiento es invalida";
+            }
 
-          
             return message;
         }
   

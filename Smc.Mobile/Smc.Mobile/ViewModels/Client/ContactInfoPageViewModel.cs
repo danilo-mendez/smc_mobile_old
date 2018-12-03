@@ -16,10 +16,11 @@ namespace Smc.Mobile.ViewModels.Client
 {
 	public class ContactInfoPageViewModel : BaseClientViewModel
     {
-        public ContactInfoPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService, IProxyClientApi proxyClient)
+        public IApiService apiService;
+        public ContactInfoPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService, IProxyClientApi proxyClient, IApiService apiService)
             : base(navigationService, busyService, pageDialogService, proxyClient)
         {
-
+            this.apiService = apiService;
          
         }
 
@@ -77,7 +78,62 @@ namespace Smc.Mobile.ViewModels.Client
                 return new DelegateCommand(async () =>
                 {
 
-                    await this.pageDialogService.DisplayAlertAsync("Alerta", "Seguro social inválido", "OK");
+
+                    var dto = new ClientDto();
+
+                    dto.FirstName = ClientModel.FirstName;
+                    dto.LastName = ClientModel.LastName;
+                    dto.SecondLastName = ClientModel.SecondLastName;
+                    dto.SecondName = ClientModel.SecondName;
+                    dto.ClientSSN = ClientModel.ClientSSN;
+
+                    dto.Sex = ClientModel.Sex;
+                    dto.DateofBirth = ClientModel.DateofBirth;
+                    dto.Citizen = ClientModel.Citizen;
+                    dto.SelectiveService = ClientModel.SelectiveService;
+
+                    dto.PhysicalAddress1 = ClientModel.PhysicalAddress1;
+                    dto.PhysicalAddress2 = ClientModel.PhysicalAddress2;
+                    dto.PhysicalAddressZipCode = ClientModel.PhysicalAddressZipCode;
+                    dto.PhysicalAddressState = ClientModel.PhysicalAddressState;
+                    dto.PhysicalAddressCity = ClientModel.PhysicalAddressCity;
+
+                    dto.PostalAddress1 = ClientModel.PostalAddress1;
+                    dto.PostalAddress2 = ClientModel.PostalAddress2;
+                    dto.PostalAddressZipCode = ClientModel.PostalAddressZipCode;
+                    dto.PostalAddressState = ClientModel.PostalAddressState;
+                    dto.PostalAddressCity = ClientModel.PostalAddressCity;
+
+
+                    dto.Telephone1 = ClientModel.Telephone1;
+                    dto.TelephoneType1 = ClientModel.TelephoneType1;
+                    dto.Email = ClientModel.Email;
+                    dto.DriverLicense = ClientModel.DriverLicense;
+                    dto.HighestEducationalLevelCompleted = ClientModel.HighestEducationalLevelCompleted;
+
+                    dto.EthnicityHispanicLatino = ClientModel.EthnicityHispanicLatino;
+                    dto.AmericanIndianAlaskaNative = ClientModel.AmericanIndianAlaskaNative;
+                    dto.Asian = ClientModel.Asian;
+                    dto.BlackAfricanAmerican = ClientModel.BlackAfricanAmerican;
+                    dto.NativeHawaiianOtherPacificIslander = ClientModel.NativeHawaiianOtherPacificIslander;
+                    dto.White = ClientModel.White;
+
+                    var registerResult = await apiService.SaveClient(dto);
+
+                    if (registerResult.ResponseCode == ResponseCodes.Success)
+                    {
+
+                        await this.pageDialogService.DisplayAlertAsync("Alerta", "Cliente registrado exitosamente", "OK");
+
+
+                        await this.NavigationService.NavigateAsync("/CreateClientNavigationPage/WelcomePage", null, false);
+
+                    }
+                    else
+                    {
+                        await this.pageDialogService.DisplayAlertAsync("Error", registerResult.Message, "OK");
+                    }
+
                 });
             }
         }

@@ -84,7 +84,7 @@
                         </inputLayout:SfTextInputLayout>
 
                         <inputLayout:SfTextInputLayout Hint="Nivel educacional más alto completado"  ContainerBackgroundColor="Transparent" Grid.Row="1" Grid.ColumnSpan="2">
-                            <Picker ItemsSource="{Binding HighestEducationalLevelCompletedList}" SelectedItem="{Binding HighestEducationalLevelCompleted, Mode=TwoWay}" ></Picker>
+                            <Picker ItemsSource="{Binding HighestEducationalLevelCompletedList}"  ItemDisplayBinding="{Binding Name}"  SelectedItem="{Binding HighestEducationalLevelCompleted, Mode=TwoWay}" ></Picker>
                         </inputLayout:SfTextInputLayout>
 
                     </Grid>
@@ -99,7 +99,7 @@
                     HorizontalOptions="Center"
                     WidthRequest="240"
                     Command="{Binding SaveAndContinueCommand}"                
-                    Text="Continuar" >
+                    Text="Registrar" >
             </Button>
         </StackLayout>
 

@@ -19,6 +19,8 @@ namespace Smc.Mobile.Api
 
         Task<ServiceResponse<Boolean>> Sign(byte[] data);
 
+        Task<ServiceResponse<bool>> SaveClient(ClientDto client);
+
     }
 
     public class ApiService : IApiService
@@ -112,6 +114,26 @@ namespace Smc.Mobile.Api
             {
                 return await Task.FromResult(ServiceResponse<Boolean>.Error(result != null ? result.Message : "Unmanaged exception"));
             }
+        }
+
+
+        public async Task<ServiceResponse<bool>> SaveClient(ClientDto client)
+        {
+      
+            var result = await proxyClient.PostJsonRequestAsync<ResultResponseDto, ClientDto>(
+                ApiConstants.AddClient,
+                client);
+
+            if (result.Ack == AckCode.Success)
+            {
+
+                return await Task.FromResult(ServiceResponse<Boolean>.Success(true));
+            }
+            else
+            {
+                return await Task.FromResult(ServiceResponse<Boolean>.Error(result != null ? result.Message : "Unmanaged exception"));
+            }
+
         }
     }
 }

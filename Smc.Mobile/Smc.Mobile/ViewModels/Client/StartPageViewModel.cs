@@ -62,19 +62,59 @@ namespace Smc.Mobile.ViewModels.Client
                                 string ssn = $"{SSN1}-{SSN2}-{SSN3}";
                                 if (ssn != null && ssn.Length == 11)
                                 {
+                                    var clientModel = new ClientModel();
 
-                                    var result = await proxyClient.GetRequestAsync<ClientDto>($"{ApiConstants.ZipCode}{ssn}");
-
+                                    var result = await proxyClient.GetRequestAsync<ClientDto>($"{ApiConstants.GetClient}{ssn}");
                                     if (result != null && result.Ack == AckCode.Success)
                                     {
-                                        if (result.Data != null)
+                                        if (result.Data != null && result.Data.ClientId > 0)
                                         {
-                                            //PhysicalAddressCity = result.Data.City;
-                                            //PhysicalAddressState = result.Data.State;
+                                            var entity = result.Data;
+
+                                            clientModel.FirstName = entity.FirstName;
+                                            clientModel.LastName = entity.LastName;
+                                            clientModel.SecondLastName = entity.SecondLastName;
+                                            clientModel.SecondName = entity.SecondName;
+                                            clientModel.ClientSSN = entity.ClientSSN;
+
+                                            clientModel.Sex = entity.Sex;
+                                            clientModel.DateofBirth = entity.DateofBirth;
+                                            clientModel.Citizen = entity.Citizen;
+                                            clientModel.SelectiveService = entity.SelectiveService;
+
+                                            clientModel.PhysicalAddress1 = entity.PhysicalAddress1;
+                                            clientModel.PhysicalAddress2 = entity.PhysicalAddress2;
+                                            clientModel.PhysicalAddressZipCode = entity.PhysicalAddressZipCode;
+                                            clientModel.PhysicalAddressState = entity.PhysicalAddressState;
+                                            clientModel.PhysicalAddressCity = entity.PhysicalAddressCity;
+
+                                            clientModel.PostalAddress1 = entity.PostalAddress1;
+                                            clientModel.PostalAddress2 = entity.PostalAddress2;
+                                            clientModel.PostalAddressZipCode = entity.PostalAddressZipCode;
+                                            clientModel.PostalAddressState = entity.PostalAddressState;
+                                            clientModel.PostalAddressCity = entity.PostalAddressCity;
+
+
+                                            clientModel.Telephone1 = entity.Telephone1;
+                                            clientModel.TelephoneType1 = entity.TelephoneType1;
+                                            clientModel.Email = entity.Email;
+                                            clientModel.DriverLicense = entity.DriverLicense;
+                                            clientModel.HighestEducationalLevelCompleted = entity.HighestEducationalLevelCompleted;
+
+                                            clientModel.EthnicityHispanicLatino = entity.EthnicityHispanicLatino;
+                                            clientModel.AmericanIndianAlaskaNative = entity.AmericanIndianAlaskaNative;
+                                            clientModel.Asian = entity.Asian;
+                                            clientModel.BlackAfricanAmerican = entity.BlackAfricanAmerican;
+                                            clientModel.NativeHawaiianOtherPacificIslander = entity.NativeHawaiianOtherPacificIslander;
+                                            clientModel.White = entity.White;
+
+                                            await this.pageDialogService.DisplayAlertAsync("Alerta", "Hemos encontrado un cliente con esta información, en las pantallas siguientes usted podra editar para continuar con su registro", "Continuar");
+
+
                                         }
+
                                     }
 
-                                    var clientModel = new ClientModel();
                                     clientModel.ClientSSN = ssn;
 
                                     NavigationParameters parameters = new NavigationParameters

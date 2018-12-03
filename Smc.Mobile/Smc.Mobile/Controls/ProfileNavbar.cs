@@ -14,7 +14,7 @@ namespace Smc.Mobile.Controls
         {
             this.ItemsSource = new List<String>
             {
-                "Perfil", "Demografía", "Dirección", "Contacto"
+                "Perfil", "Demografía", "Dirección", "Otra Info."
             };
 
             
