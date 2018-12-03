@@ -109,6 +109,7 @@ namespace Smc.Mobile.ViewModels.Client
                     dto.TelephoneType1 = ClientModel.TelephoneType1;
                     dto.Email = ClientModel.Email;
                     dto.DriverLicense = ClientModel.DriverLicense;
+                    dto.DriverLicenseCategory = ClientModel.DriverLicenseCategory;
                     dto.HighestEducationalLevelCompleted = ClientModel.HighestEducationalLevelCompleted;
 
                     dto.EthnicityHispanicLatino = ClientModel.EthnicityHispanicLatino;
@@ -117,6 +118,7 @@ namespace Smc.Mobile.ViewModels.Client
                     dto.BlackAfricanAmerican = ClientModel.BlackAfricanAmerican;
                     dto.NativeHawaiianOtherPacificIslander = ClientModel.NativeHawaiianOtherPacificIslander;
                     dto.White = ClientModel.White;
+                    dto.Purpose = ClientModel.Purpose;
 
                     var registerResult = await apiService.SaveClient(dto);
 

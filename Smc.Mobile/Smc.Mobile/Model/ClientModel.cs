@@ -95,6 +95,8 @@ namespace Smc.Mobile.Model
         public Nullable<int> Citizen { get; set; }
         public Nullable<int> SelectiveService { get; set; }
 
+        public int Purpose { get; set; }
+
 
     }
 }

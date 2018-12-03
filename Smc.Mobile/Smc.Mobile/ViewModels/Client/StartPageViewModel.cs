@@ -45,6 +45,13 @@ namespace Smc.Mobile.ViewModels.Client
             set { SetProperty(ref ssn3, value); }
         }
 
+        IdNameModel purpose;
+        public IdNameModel Purpose
+        {
+            get { return purpose; }
+            set { SetProperty(ref purpose, value); }
+        }
+
         public DelegateCommand SearchAndContinueCommand
         {
             get
@@ -60,7 +67,15 @@ namespace Smc.Mobile.ViewModels.Client
                             try
                             {
                                 string ssn = $"{SSN1}-{SSN2}-{SSN3}";
-                                if (ssn != null && ssn.Length == 11)
+                                if(ssn.Length != 11)
+                                {
+                                    await this.pageDialogService.DisplayAlertAsync("Alerta", "Seguro social inválido", "OK");
+                                }
+                                else if (Purpose == null)
+                                {
+                                    await this.pageDialogService.DisplayAlertAsync("Alerta", "Ingrese porpósito de su visita", "OK");
+                                }
+                                else
                                 {
                                     var clientModel = new ClientModel();
 
@@ -99,6 +114,7 @@ namespace Smc.Mobile.ViewModels.Client
                                             clientModel.TelephoneType1 = entity.TelephoneType1;
                                             clientModel.Email = entity.Email;
                                             clientModel.DriverLicense = entity.DriverLicense;
+                                            clientModel.DriverLicenseCategory = entity.DriverLicenseCategory;
                                             clientModel.HighestEducationalLevelCompleted = entity.HighestEducationalLevelCompleted;
 
                                             clientModel.EthnicityHispanicLatino = entity.EthnicityHispanicLatino;
@@ -116,6 +132,8 @@ namespace Smc.Mobile.ViewModels.Client
                                     }
 
                                     clientModel.ClientSSN = ssn;
+                                    clientModel.Purpose = Purpose.Id;
+
 
                                     NavigationParameters parameters = new NavigationParameters
                                     {
@@ -124,10 +142,7 @@ namespace Smc.Mobile.ViewModels.Client
 
                                     await this.NavigationService.NavigateAsync("MainProfilePage", parameters, false);
                                 }
-                                else
-                                {
-                                    await this.pageDialogService.DisplayAlertAsync("Alerta", "Seguro social inválido", "OK");
-                                }
+
 
                             }
                             catch (Exception ex)

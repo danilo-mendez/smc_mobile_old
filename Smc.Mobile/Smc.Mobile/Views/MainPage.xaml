@@ -8,30 +8,46 @@
     <ToolbarItem  Order="Primary" Icon="ico_setting.png" Priority="1"   Command="{Binding Path=SettingCommand}"   />
   </ContentPage.ToolbarItems>
 
-  <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-    <Label Text="{Binding TabletInfo}"  />
 
+    <FlexLayout Direction="Column">
 
-    <StackLayout HorizontalOptions="EndAndExpand">
+        <!-- Header -->
+        <!-- Body -->
+        <FlexLayout FlexLayout.Grow="1" Margin="40 , 20, 20, 40">
 
-      <Button Style="{StaticResource ActionButtonStyle}"
+            <ScrollView FlexLayout.Grow="1">
+
+                <StackLayout>
+
+                    <Button Style="{StaticResource ActionButtonStyle}"
                   HorizontalOptions="Center"
                   WidthRequest="240"
+                               Margin="0, 190, 0, 40"
                   Command="{Binding GotoRegisterClientCommand}"
               IsVisible="{Binding UseForRegister}"
                   Text="Autoregistro" >
-      </Button>
+                    </Button>
 
-      <Button Style="{StaticResource ActionButtonStyle}"
+                    <Button Style="{StaticResource ActionButtonStyle}"
               HorizontalOptions="Center"
               WidthRequest="240"
-              Margin="0, 0, 0, 20"
+              Margin="0, 30, 0, 20"
               Command="{Binding GotoSignaturePadCommand}"
           IsVisible="{Binding UseForSignature}"
               Text="Firmar" >
-      </Button>
+                    </Button>
 
-    </StackLayout>
-  </StackLayout>
 
+                </StackLayout>
+            </ScrollView>
+        </FlexLayout>
+
+        <!-- Footer -->
+        <StackLayout HorizontalOptions="EndAndExpand">
+            <Label Text="{Binding TabletInfo}"  />
+        </StackLayout>
+
+    </FlexLayout>
+ 
+ 
 </ContentPage>

@@ -79,5 +79,6 @@ namespace Smc.Mobile.Api.Dto
         public string PreferredLaborArea2Description { get; set; }
         public Nullable<int> Citizen { get; set; }
         public Nullable<int> SelectiveService { get; set; }
+        public int Purpose { get;  set; }
     }
 }

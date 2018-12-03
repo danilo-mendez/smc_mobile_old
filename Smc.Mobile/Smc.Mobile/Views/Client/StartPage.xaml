@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+                 xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Smc.Mobile.Views.Client.StartPage">
   <ContentPage.ToolbarItems>
@@ -19,10 +19,14 @@
         <Label Text="Para comenzar, ingrese su Número de Seguro Social" HorizontalOptions="CenterAndExpand" FontSize="{StaticResource LargerSize}"  />
         <StackLayout Margin="10, 10" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
 
-            <Entry  WidthRequest="50" Text="{Binding SSN1}"  x:Name="Entry1" MaxLength="3" TextChanged="Entry1_TextChanged" IsPassword="True" Keyboard="Numeric" FontSize="{StaticResource LargerSize}"></Entry>
-            <Entry  WidthRequest="40" Text="{Binding SSN2}"  Margin="20, 0, 0, 0" Keyboard="Numeric" x:Name="Entry2" MaxLength="2" TextChanged="Entry2_TextChanged" IsPassword="True" FontSize="{StaticResource LargerSize}"></Entry>
-            <Entry  WidthRequest="70" Text="{Binding SSN3}"  Margin="20, 0, 0, 0" Keyboard="Numeric" x:Name="Entry3" MaxLength="4" FontSize="{StaticResource LargerSize}" IsPassword="True"></Entry>
+            <Entry  WidthRequest="50" Text="{Binding SSN1}" Placeholder="000"  x:Name="Entry1" MaxLength="3" TextChanged="Entry1_TextChanged" IsPassword="True" Keyboard="Numeric" FontSize="{StaticResource LargerSize}"></Entry>
+            <Entry  WidthRequest="40" Text="{Binding SSN2}" Placeholder="00"    Margin="20, 0, 0, 0" Keyboard="Numeric" x:Name="Entry2" MaxLength="2" TextChanged="Entry2_TextChanged" IsPassword="True" FontSize="{StaticResource LargerSize}"></Entry>
+            <Entry  WidthRequest="70" Text="{Binding SSN3}" Placeholder="0000"    Margin="20, 0, 0, 0" Keyboard="Numeric" x:Name="Entry3" MaxLength="4" FontSize="{StaticResource LargerSize}" IsPassword="True"></Entry>
         </StackLayout>
+
+        <inputLayout:SfTextInputLayout Hint="Propósito de su visita" ContainerBackgroundColor="Transparent"  HorizontalOptions="Center" WidthRequest="400" >
+            <Picker ItemsSource="{Binding VisitPurposeList}"  ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding Purpose, Mode=TwoWay}" ></Picker>
+        </inputLayout:SfTextInputLayout>
 
         <Button Style="{StaticResource ActionButtonStyle}"  Command="{Binding SearchAndContinueCommand}"  Text="Continuar" >
 

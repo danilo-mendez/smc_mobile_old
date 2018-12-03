@@ -84,6 +84,26 @@ namespace Smc.Mobile.ViewModels.Client
                 new IdNameModel { Id = 7, Name = "Attained a Bachelor degree" },
                 new IdNameModel { Id = 8, Name = "Attained a degree beyond a Bachelor degree" }
             };
+
+            VisitPurposeList = new List<IdNameModel>
+            {
+                  new IdNameModel { Id = 1 , Name = "Ayuda con certificaciones de gobierno" },
+                  new IdNameModel { Id = 2 , Name = "Búsqueda de empleo" },
+                  new IdNameModel { Id = 3 , Name = "Cita con consejero o manejador de casos" },
+                  new IdNameModel { Id = 4 , Name = "Cita con representante (Socio CGU)" },
+                  new IdNameModel { Id = 5 , Name = "Cita con técnico de servicios" },
+                  new IdNameModel { Id = 6 , Name = "Entrevista inicial" },
+                  new IdNameModel { Id = 7 , Name = "Nombramiento o registro a servicio" },
+                  new IdNameModel { Id = 8 , Name = "Orientación inicial sobre los programas - WIOA" },
+                  new IdNameModel { Id = 9 , Name = "Orientación sobre los servicios del CGU y Socios" },
+                  new IdNameModel { Id = 10, Name = "Orientación sobre adiestramientos" },
+                  new IdNameModel { Id = 11, Name = "Pruebas de alfabetización" },
+                  new IdNameModel { Id = 12, Name = "Redacción de resumes" },
+                  new IdNameModel { Id = 13, Name = "Referidos de otras agencias fuera del CGU" },
+                  new IdNameModel { Id = 14, Name = "Traer documentación " },
+                  new IdNameModel { Id = 15, Name = "Uso del CGU - Auto-Gestión" },
+                  new IdNameModel { Id = 16, Name = "Otro Propósito" },
+            };
         }
 
         public List<IdNameModel> GenderList
@@ -116,6 +136,10 @@ namespace Smc.Mobile.ViewModels.Client
             get; set;
         }
 
+        public List<IdNameModel> VisitPurposeList
+        {
+            get; set;
+        }
 
         protected ClientModel ClientModel
         {
