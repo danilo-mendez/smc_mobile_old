@@ -19,7 +19,7 @@ namespace Smc.Mobile.ViewModels.Client
         public StartPageViewModel(INavigationService navigationService, IBusyService busyService, IPageDialogService pageDialogService, IProxyClientApi proxyClient)
                : base(navigationService, busyService, pageDialogService, proxyClient)
         {
-            Title = "Bienvenido";
+            Title = "SMC Mobile";
         }
 
   

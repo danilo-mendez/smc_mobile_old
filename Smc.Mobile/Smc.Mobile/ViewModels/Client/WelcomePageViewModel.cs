@@ -14,7 +14,7 @@ namespace Smc.Mobile.ViewModels.Client
         public WelcomePageViewModel(INavigationService navigationService, IBusyService busyService)
        : base(navigationService, busyService)
         {
-            Title = "Bienvenido";
+            Title = "SMC Mobile";
         }
 
 

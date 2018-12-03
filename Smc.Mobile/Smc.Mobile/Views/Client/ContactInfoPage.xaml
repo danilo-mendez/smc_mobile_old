@@ -50,7 +50,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <inputLayout:SfTextInputLayout Hint="Teléfono"  ContainerBackgroundColor="Transparent">
-                            <maskedit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-000" Value="{Binding Telephone1}"/>
+                            <maskedit:SfMaskedEdit  MaskType="Text" Mask="(000)-000-0000" Value="{Binding Telephone1}"/>
                         </inputLayout:SfTextInputLayout>
                         <inputLayout:SfTextInputLayout Hint="Tipo" ContainerBackgroundColor="Transparent" Grid.Column="1" >
                             <Picker ItemsSource="{Binding PhoneTypeList}"  ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding TelephoneType1, Mode=TwoWay}" ></Picker>

@@ -48,12 +48,8 @@ namespace Smc.Mobile
             containerRegistry.Register<IBusyService, BusyService>();
             containerRegistry.Register<IApiService, ApiService>();
 
-#if DEBUG
-            containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(ApiConstants.Baseurl));
-#else
             string baseurl = CrossSettings.Current.Get<string>("Url", ApiConstants.Baseurl);
             containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(baseurl));
-#endif
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();

@@ -14,7 +14,7 @@ using Android.Widget;
 
 namespace Smc.Mobile.Droid
 {
-    [Activity(Label = "Mobile App Name", Icon = "@drawable/icon", Theme = "@style/splashscreen", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "SMC", Icon = "@mipmap/ic_launcher", Theme = "@style/splashscreen", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
 

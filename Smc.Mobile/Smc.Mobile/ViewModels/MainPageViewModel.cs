@@ -25,7 +25,7 @@ namespace Smc.Mobile.ViewModels
             this.apiService = apiService;
             this.pageDialogService = pageDialogService;
 
-            Title = "Bienvenido SMC Mobile";
+            Title = "SMC Mobile";
 
             LoadData();
 

@@ -9,7 +9,7 @@
   <StackLayout VerticalOptions="Start" HorizontalOptions="Center">
 
     <!--<Image Source="https://amde.dyteks.com/Resources/logo.png" />-->
-    <Label Text="Sistema de Manejo de Casos" HorizontalOptions="CenterAndExpand" Margin="10, 40, 10, 40" FontSize="{StaticResource ExtraBigSize}"/>
+    <Label Text="Sistema de Manejo de Clientes" HorizontalOptions="CenterAndExpand" Margin="10, 140, 10, 40" FontSize="{StaticResource ExtraBigSize}"/>
     <Label Text="Haga clic en comenzar para usar el sistema de autoregistro de SMC." HorizontalOptions="CenterAndExpand" Margin="10, 40, 10, 40" FontSize="{StaticResource LargeSize}"/>
 
     <Button Style="{StaticResource ActionButtonStyle}"
