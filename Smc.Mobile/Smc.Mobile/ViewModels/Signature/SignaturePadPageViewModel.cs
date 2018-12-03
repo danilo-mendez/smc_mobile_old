@@ -1,11 +1,11 @@
-﻿using Acr.UserDialogs;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
 using SignaturePad.Forms;
 using Smc.Mobile.Api;
 using Smc.Mobile.Api.Dto;
+using Smc.Mobile.Controls;
 using SMC.Mobile.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -63,7 +63,7 @@ namespace Smc.Mobile.ViewModels
 
                                         if (postSignature.ResponseCode == ResponseCodes.Success)
                                         {
-                                            Acr.UserDialogs.UserDialogs.Instance.Toast("Firma sometida exitosamente");
+                                            Xamarin.Forms.DependencyService.Get<IMessage>().LongAlert("Firma sometida exitosamente"); 
 
                                             await this.NavigationService.GoBackAsync();
                                         }

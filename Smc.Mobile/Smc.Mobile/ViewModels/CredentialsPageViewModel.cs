@@ -1,6 +1,4 @@
-﻿using Acr.Settings;
-using Acr.UserDialogs;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
@@ -24,6 +22,32 @@ namespace Smc.Mobile.ViewModels
             this.apiService = apiService;
             this.pageDialogService = pageDialogService;
 
+        }
+
+
+        String password;
+        public String Password
+        {
+            get { return password; }
+            set { SetProperty(ref password, value); }
+        }
+
+        public DelegateCommand ContinueCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    if (!String.IsNullOrEmpty(Password) && Password == "8521")
+                    {
+                        await this.NavigationService.NavigateAsync("SettingsPage", null, false);
+                    }
+                    else
+                    {
+                        await this.pageDialogService.DisplayAlertAsync("Alerta", "Password invalida", "OK");
+                    }
+                });
+            }
         }
     }
 }

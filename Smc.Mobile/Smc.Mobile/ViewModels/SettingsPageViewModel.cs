@@ -1,5 +1,4 @@
 ﻿using Acr.Settings;
-using Acr.UserDialogs;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -80,6 +79,9 @@ namespace Smc.Mobile.ViewModels
                                 CrossSettings.Current.Set<bool>("UseForRegister", UseForRegister);
 
                                 await this.pageDialogService.DisplayAlertAsync("Alerta", "Informacion actualizada", "OK");
+
+
+                                await this.NavigationService.NavigateAsync("/CreateClientNavigationPage/MainPage", null, false);
                             }
                             else
                             {

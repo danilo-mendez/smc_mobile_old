@@ -1,9 +1,9 @@
-﻿using Acr.UserDialogs;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
 using Smc.Mobile.Api;
+using Smc.Mobile.Controls;
 using SMC.Mobile.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -238,7 +238,7 @@ namespace Smc.Mobile.ViewModels
             set => SetProperty(ref _title, value);
         }
  
-        protected async void HandleException(Exception ex)
+        protected  void HandleException(Exception ex)
         {
             if (ex is ApiException)
             {
@@ -249,12 +249,12 @@ namespace Smc.Mobile.ViewModels
 
                         break;
                 }
-                await UserDialogs.Instance.AlertAsync("Code: " + apiException.HttpStatusCode.ToString(), apiException.Message);
+                Xamarin.Forms.DependencyService.Get<IMessage>().LongAlert("Code: " + apiException.HttpStatusCode.ToString());
             }
             else
             {
 
-                await UserDialogs.Instance.AlertAsync("General Failure, please try again");
+                Xamarin.Forms.DependencyService.Get<IMessage>().LongAlert("General Failure, please try again");
             }
             System.Console.WriteLine(ex);
         }

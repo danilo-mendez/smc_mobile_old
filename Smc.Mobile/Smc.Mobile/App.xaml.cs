@@ -65,6 +65,7 @@ namespace Smc.Mobile
             containerRegistry.RegisterForNavigation<SignaturePadPage, SignaturePadPageViewModel>();
             containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
             containerRegistry.RegisterForNavigation<CredentialsPage, CredentialsPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabletInfoPage, TabletInfoPageViewModel>();
         }
     }
 }

@@ -4,16 +4,16 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
                          xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-             Title="Ingrese Credenciales"
-             x:Class="Smc.Mobile.Views.CredentialsPage">
+             Title="Configuracion"
+             x:Class="Smc.Mobile.Views.TabletInfoPage">
 
     <FlexLayout Direction="Column">
         <!-- Body -->
         <FlexLayout FlexLayout.Grow="1" Margin="40 , 20, 20, 40">
             <ScrollView FlexLayout.Grow="1">
                 <StackLayout >
-                    <inputLayout:SfTextInputLayout Hint="Ingrese Credenciales" ContainerBackgroundColor="Transparent"  >
-                        <Entry Text="{Binding Password}"  Keyboard="Numeric" IsPassword="True" />
+                    <inputLayout:SfTextInputLayout Hint="Ingrese Nombre de la Tableta" ContainerBackgroundColor="Transparent"  >
+                        <Entry Text="{Binding Name}"  />
                     </inputLayout:SfTextInputLayout>
                 </StackLayout>
             </ScrollView>
@@ -29,5 +29,4 @@
         </StackLayout>
 
     </FlexLayout>
-
 </ContentPage>

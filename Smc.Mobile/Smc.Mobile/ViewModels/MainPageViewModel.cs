@@ -1,10 +1,10 @@
 ﻿using Acr.Settings;
-using Acr.UserDialogs;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
 using Smc.Mobile.Api;
+using Smc.Mobile.Controls;
 using SMC.Mobile.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -87,33 +87,7 @@ namespace Smc.Mobile.ViewModels
 
                         if (!initialized)
                         {
-                            var promptConfig = new PromptConfig
-                            {
-                                InputType = InputType.Name,
-                                IsCancellable = false,
-                                Message = "Ingrese codigo tableta"
-                            };
-
-                            //var action = await pageDialogService.DisplayActionSheetAsync("ActionSheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
-
-                            var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
-                            if (dialogResult.Ok)
-                            {
-                                if (!String.IsNullOrEmpty(dialogResult.Text))
-                                {
-                                    var registerResult = await apiService.Register(dialogResult.Text);
-                                    if (registerResult.ResponseCode == ResponseCodes.Success)
-                                    {
-
-                                        await this.pageDialogService.DisplayAlertAsync("Alerta", "Tableta Registrada exitosamente", "OK");
-                                    }
-                                    else
-                                    {
-                                        await this.pageDialogService.DisplayAlertAsync("Error", registerResult.Message, "OK");
-                                    }
-                                }
-
-                            }
+                            await this.NavigationService.NavigateAsync("TabletInfoPage", null, false);
                         }
                     }
                     catch (Exception ex)
@@ -176,31 +150,7 @@ namespace Smc.Mobile.ViewModels
             {
                 return new DelegateCommand(async () =>
                 {
-
-                    NavigationService.PushPopupAsync()
-                    //var promptConfig = new PromptConfig
-                    //{
-                    //    InputType = InputType.NumericPassword,
-                    //    IsCancellable = false,
-                    //    Message = "Ingrese clave"
-                    //};
-
-                    //var dialogResult = await UserDialogs.Instance.PromptAsync(promptConfig);
-                    //if (dialogResult.Ok)
-                    //{
-                    //    if (!String.IsNullOrEmpty(dialogResult.Text) && dialogResult.Text == "8521")
-                    //    {
-                    //        await this.NavigationService.NavigateAsync("SettingsPage", null, false);
-                    //    }
-                    //    else
-                    //    {
-                    //        await this.pageDialogService.DisplayAlertAsync("Alerta", "Clave Invalida", "OK");
-                    //    }
-
-                    //}
-                    await this.NavigationService.NavigateAsync("CredentialsPage", null, false);
-
-
+                     await this.NavigationService.NavigateAsync("CredentialsPage", null, false);
                 });
             }
         }
