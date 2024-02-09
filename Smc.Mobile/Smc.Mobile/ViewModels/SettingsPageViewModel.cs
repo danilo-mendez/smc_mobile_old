@@ -25,7 +25,7 @@ namespace Smc.Mobile.ViewModels
 
             Title = "Setting";
 
-            Url =  CrossSettings.Current.Get<String>("Url", ApiConstants.Baseurl);
+            Url = ApiConstants.Baseurl; // CrossSettings.Current.Get<String>("Url", ApiConstants.Baseurl);
             TabletName =  CrossSettings.Current.Get<String>("TabletName", "");
             UseForSignature = CrossSettings.Current.Get<bool>("UseForSignature", true);
             UseForRegister = CrossSettings.Current.Get<bool>("UseForRegister", true);

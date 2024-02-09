@@ -49,7 +49,7 @@ namespace Smc.Mobile
             containerRegistry.Register<IApiService, ApiService>();
 
             string baseurl = CrossSettings.Current.Get<string>("Url", ApiConstants.Baseurl);
-            containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(baseurl));
+            containerRegistry.RegisterInstance<IProxyClientApi>(new WebClientApi(ApiConstants.Baseurl));
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StartPage, StartPageViewModel>();

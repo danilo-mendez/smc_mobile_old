@@ -109,30 +109,12 @@ namespace Smc.Mobile.ViewModels.Client
 
         private void LoadClientModel()
         {
-            if (this.EthnicityHispanicLatino)
-            {
-                ClientModel.EthnicityHispanicLatino = 1;
-            }
-            if (this.AmericanIndianAlaskaNative)
-            {
-                ClientModel.AmericanIndianAlaskaNative = 1;
-            }
-            if (this.Asian)
-            {
-                ClientModel.Asian = 1;
-            }
-            if (this.BlackAfricanAmerican)
-            {
-                ClientModel.BlackAfricanAmerican = 1;
-            }
-            if (this.NativeHawaiianOtherPacificIslander)
-            {
-                ClientModel.NativeHawaiianOtherPacificIslander = 1;
-            }
-            if (this.White)
-            {
-                ClientModel.White = 1;
-            }
+            ClientModel.EthnicityHispanicLatino = this.EthnicityHispanicLatino ? 1 :0;
+            ClientModel.AmericanIndianAlaskaNative = this.AmericanIndianAlaskaNative ? 1 : 0;
+            ClientModel.Asian = this.Asian ? 1 : 0;
+            ClientModel.BlackAfricanAmerican = this.BlackAfricanAmerican ? 1 : 0;
+            ClientModel.NativeHawaiianOtherPacificIslander = this.NativeHawaiianOtherPacificIslander ? 1 : 0;
+            ClientModel.White = this.White ? 1 : 0;
 
         }
 

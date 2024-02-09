@@ -22,7 +22,7 @@
                 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                         <Label Text="Url" Style="{StaticResource FormLabelStyle}"  ></Label>
-                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding Url}"  ></Entry>
+                        <Entry Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Text="{Binding Url}"  IsEnabled="False" ></Entry>
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">

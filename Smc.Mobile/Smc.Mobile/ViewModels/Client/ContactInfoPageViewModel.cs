@@ -78,6 +78,7 @@ namespace Smc.Mobile.ViewModels.Client
                 return new DelegateCommand(async () =>
                 {
 
+                    LoadClientModel();
 
                     var dto = new ClientDto();
 
